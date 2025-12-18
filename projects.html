@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects · Alex Rivers</title>
+    <meta name="description" content="Case studies and detailed breakdowns of my music production projects.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#8B5CF6',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .navbar {
+            transition: all 0.3s ease;
+        }
+        .navbar.scrolled {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        img {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.05));
+        }
+        img[src=""], img:not([src]) {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-[#1a1a1a] text-[#f5f5f5] transition-colors duration-300">
+    
+    <!-- Navbar -->
+    <nav class="navbar fixed top-0 left-0 right-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 text-2xl font-serif font-bold text-accent">
+                <svg class="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18V5l12-2v13"></path>
+                    <circle cx="6" cy="18" r="3"></circle>
+                    <circle cx="18" cy="16" r="3"></circle>
+                </svg>
+                <span>Alex Rivers</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="index.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Home</a>
+                <a href="music.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Music</a>
+                <a href="projects.html" class="nav-link text-sm font-medium text-accent transition-colors">Projects</a>
+                <a href="services.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Services</a>
+                <a href="about.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">About</a>
+                <a href="contact.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Contact</a>
+                
+                <button class="theme-toggle p-2 rounded-lg hover:bg-white/10 transition-colors">
+                    <span class="theme-icon">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </span>
+                </button>
+                
+                <a href="login.html" class="text-sm font-medium hover:text-accent transition-colors">Login</a>
+                <a href="signup.html" class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Sign Up</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden lg:hidden mt-4 pb-4 border-t border-white/10">
+            <div class="flex flex-col space-y-4 pt-4">
+                <a href="index.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Home</a>
+                <a href="music.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Music</a>
+                <a href="projects.html" class="nav-link text-sm font-medium text-accent transition-colors">Projects</a>
+                <a href="services.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Services</a>
+                <a href="about.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">About</a>
+                <a href="contact.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Contact</a>
+                <div class="flex items-center justify-between pt-2">
+                    <button class="theme-toggle p-2 rounded-lg hover:bg-white/10 transition-colors">
+                        <span class="theme-icon">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="flex space-x-4">
+                        <a href="login.html" class="text-sm font-medium hover:text-accent transition-colors">Login</a>
+                        <a href="signup.html" class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Page Header -->
+    <section class="pt-32 pb-16 px-6">
+        <div class="max-w-7xl mx-auto text-center fade-in">
+            <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6">Projects</h1>
+            <p class="text-xl text-[#b0b0b0] max-w-2xl mx-auto">
+                Detailed case studies of my production work, from concept to final mix.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Project Case Studies -->
+    <section class="py-12 px-6">
+        <div class="max-w-6xl mx-auto space-y-24">
+            
+            <!-- Project 1 -->
+            <article class="fade-in">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-8">
+                    <div class="aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=450&fit=crop" alt="Echoes album cover and production" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'450\'%3E%3Crect width=\'800\' height=\'450\' fill=\'%231a1a1a\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' font-family=\'Arial\' font-size=\'24\' fill=\'%238B5CF6\' text-anchor=\'middle\' dominant-baseline=\'middle\'%3EAlbum Production%3C/text%3E%3C/svg%3E';">
+                    </div>
+                    <div>
+                        <span class="text-sm text-accent font-medium mb-2 block">2024 · Album Production</span>
+                        <h2 class="text-4xl font-serif font-bold mb-4">"Echoes" - Full Album Production</h2>
+                        <p class="text-lg text-[#b0b0b0] leading-relaxed mb-6">
+                            Complete album production for emerging artist Sarah Chen. 12 tracks blending electronic and organic elements, creating a cohesive sonic journey that explores themes of memory and identity.
+                        </p>
+                        <ul class="space-y-2 text-[#b0b0b0] mb-6">
+                            <li>• 12 original compositions</li>
+                            <li>• Full mixing and mastering</li>
+                            <li>• Sound design and synthesis</li>
+                            <li>• Collaborative creative direction</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="prose prose-invert max-w-none">
+                    <h3 class="text-2xl font-serif font-bold mb-4">The Process</h3>
+                    <p class="text-[#b0b0b0] leading-relaxed mb-4">
+                        The project began with extensive pre-production meetings to understand Sarah's vision. We established a sonic palette that would serve as the foundation for the entire album—warm analog synths, organic percussion, and ethereal vocal processing.
+                    </p>
+                    <div class="my-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="w-full h-64 rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=600&h=400&fit=crop" alt="Album recording session with artist" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\'%3E%3Crect width=\'600\' height=\'400\' fill=\'%231a1a1a\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' font-family=\'Arial\' font-size=\'20\' fill=\'%238B5CF6\' text-anchor=\'middle\' dominant-baseline=\'middle\'%3ERecording Session%3C/text%3E%3C/svg%3E';">
+                        </div>
+                        <div class="w-full h-64 rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&h=400&fit=crop&auto=format&q=80" alt="Professional mixing studio with mixing console and equipment" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.05))';">
+                        </div>
+                    </div>
+                    <p class="text-[#b0b0b0] leading-relaxed mb-4">
+                        Each track was built from the ground up, with careful attention to how they would flow together as a complete listening experience. The mixing process involved multiple revisions to ensure each element had its place in the stereo field, while mastering brought cohesion and commercial loudness without sacrificing dynamics.
+                    </p>
+                </div>
+            </article>
+            
+            <!-- Project 2 -->
+            <article class="fade-in">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-8">
+                    <div class="order-2 md:order-1">
+                        <span class="text-sm text-accent font-medium mb-2 block">2024 · Film Score</span>
+                        <h2 class="text-4xl font-serif font-bold mb-4">"The Last Light" - Film Score</h2>
+                        <p class="text-lg text-[#b0b0b0] leading-relaxed mb-6">
+                            Original score composition for independent film "The Last Light." Orchestral arrangements with electronic textures, enhancing the narrative's emotional depth and supporting the film's visual storytelling.
+                        </p>
+                        <ul class="space-y-2 text-[#b0b0b0] mb-6">
+                            <li>• 45 minutes of original music</li>
+                            <li>• Hybrid orchestral/electronic approach</li>
+                            <li>• Real-time synchronization with picture</li>
+                            <li>• Dynamic range optimization for cinema</li>
+                        </ul>
+                    </div>
+                    <div class="aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5 order-1 md:order-2">
+                        <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&h=450&fit=crop" alt="The Last Light film score composition" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'450\'%3E%3Crect width=\'800\' height=\'450\' fill=\'%231a1a1a\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' font-family=\'Arial\' font-size=\'24\' fill=\'%238B5CF6\' text-anchor=\'middle\' dominant-baseline=\'middle\'%3EFilm Score%3C/text%3E%3C/svg%3E';">
+                    </div>
+                </div>
+                <div class="prose prose-invert max-w-none">
+                    <h3 class="text-2xl font-serif font-bold mb-4">The Challenge</h3>
+                    <p class="text-[#b0b0b0] leading-relaxed mb-4">
+                        The director wanted a score that felt both timeless and contemporary—classical orchestral elements that could seamlessly blend with modern electronic production. This required careful orchestration and sound design to create a cohesive hybrid sound.
+                    </p>
+                    <div class="my-6 w-full h-80 rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&h=600&fit=crop" alt="Hybrid orchestral and electronic composition" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'1200\' height=\'600\'%3E%3Crect width=\'1200\' height=\'600\' fill=\'%231a1a1a\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' font-family=\'Arial\' font-size=\'24\' fill=\'%238B5CF6\' text-anchor=\'middle\' dominant-baseline=\'middle\'%3EOrchestral Composition%3C/text%3E%3C/svg%3E';">
+                    </div>
+                    <p class="text-[#b0b0b0] leading-relaxed mb-4">
+                        Working closely with the director and editor, I developed themes for each character and key emotional moments. The score needed to support the narrative without overwhelming it, leaving space for dialogue and ambient sound design. The final mix was optimized for both theatrical and streaming distribution.
+                    </p>
+                </div>
+            </article>
+            
+            <!-- Project 3 -->
+            <article class="fade-in">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-8">
+                    <div class="aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5">
+                        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&h=450&fit=crop&auto=format&q=80" alt="EP production in music studio with recording equipment" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.05))';">
+                    </div>
+                    <div>
+                        <span class="text-sm text-accent font-medium mb-2 block">2023 · EP Production</span>
+                        <h2 class="text-4xl font-serif font-bold mb-4">"Midnight Sessions" - EP</h2>
+                        <p class="text-lg text-[#b0b0b0] leading-relaxed mb-6">
+                            Production and mixing for a 5-track EP exploring nocturnal soundscapes. Dark, atmospheric hip-hop with electronic elements, featuring collaborations with multiple vocalists.
+                        </p>
+                        <ul class="space-y-2 text-[#b0b0b0] mb-6">
+                            <li>• 5-track cohesive EP</li>
+                            <li>• Multiple artist collaborations</li>
+                            <li>• Atmospheric sound design</li>
+                            <li>• Streaming-optimized mastering</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="prose prose-invert max-w-none">
+                    <h3 class="text-2xl font-serif font-bold mb-4">The Vision</h3>
+                    <p class="text-[#b0b0b0] leading-relaxed mb-4">
+                        The concept was to create a cohesive listening experience that captured the energy and atmosphere of late-night creative sessions. Each track was designed to flow into the next, creating a continuous journey through different moods and tempos.
+                    </p>
+                    <div class="my-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="w-full h-64 rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600&h=400&fit=crop" alt="Hip-hop production and sound design" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\'%3E%3Crect width=\'600\' height=\'400\' fill=\'%231a1a1a\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' font-family=\'Arial\' font-size=\'20\' fill=\'%238B5CF6\' text-anchor=\'middle\' dominant-baseline=\'middle\'%3EHip-Hop Production%3C/text%3E%3C/svg%3E';">
+                        </div>
+                        <div class="w-full h-64 rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=600&h=400&fit=crop" alt="Vocal collaboration and recording" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\'%3E%3Crect width=\'600\' height=\'400\' fill=\'%231a1a1a\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' font-family=\'Arial\' font-size=\'20\' fill=\'%238B5CF6\' text-anchor=\'middle\' dominant-baseline=\'middle\'%3EVocal Collaboration%3C/text%3E%3C/svg%3E';">
+                        </div>
+                    </div>
+                    <p class="text-[#b0b0b0] leading-relaxed mb-4">
+                        The production process involved extensive sound design sessions to create unique textures and atmospheres. Each vocalist brought their own style, and my role was to create a sonic foundation that would complement and enhance their performances while maintaining the overall EP's cohesive sound.
+                    </p>
+                </div>
+            </article>
+            
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-12 px-6 mt-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 18V5l12-2v13"></path>
+                            <circle cx="6" cy="18" r="3"></circle>
+                            <circle cx="18" cy="16" r="3"></circle>
+                        </svg>
+                        <h3 class="text-xl font-serif font-bold text-accent">Alex Rivers</h3>
+                    </div>
+                    <p class="text-sm text-[#b0b0b0]">Music Producer · Sound Designer</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Home</a></li>
+                        <li><a href="music.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Music</a></li>
+                        <li><a href="projects.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Projects</a></li>
+                        <li><a href="services.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Services</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="text-[#b0b0b0] hover:text-accent transition-colors">About</a></li>
+                        <li><a href="contact.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-[#b0b0b0] hover:text-accent transition-colors">Instagram</a></li>
+                        <li><a href="#" class="text-[#b0b0b0] hover:text-accent transition-colors">Spotify</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-[#b0b0b0] hover:text-accent transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-[#b0b0b0] hover:text-accent transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 text-center text-sm text-[#b0b0b0]">
+                <p>&copy; 2025 Alex Rivers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+

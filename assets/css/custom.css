@@ -1,0 +1,952 @@
+/* Custom CSS Overrides - Minimal use only */
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Light theme body styles */
+html.light body {
+  background-color: #fafafa;
+  color: #1a1a1a;
+}
+
+html.light .navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+html.light .bg-white\/5 {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+html.light .bg-white\/10 {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+html.light .border-white\/10 {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+html.light .text-\[\#b0b0b0\] {
+  color: #666;
+}
+
+html.light .text-\[\#d0d0d0\] {
+  color: #333;
+}
+
+html.light .text-\[\#f5f5f5\] {
+  color: #1a1a1a;
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Light theme scrollbar */
+html.light ::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
+/* Audio player custom styling */
+audio {
+  width: 100%;
+  outline: none;
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+html.light audio::-webkit-media-controls-panel {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   RESPONSIVE FIXES FOR MOBILE & TABLET
+   ============================================ */
+
+/* Prevent horizontal overflow */
+html {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
+}
+
+/* Make all images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fix container overflow */
+.container,
+.max-w-7xl,
+.max-w-6xl,
+.max-w-5xl,
+.max-w-4xl,
+.max-w-3xl,
+.max-w-2xl {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Fix text overflow */
+h1, h2, h3, h4, h5, h6, p, a, span {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Fix long URLs and emails */
+a {
+  word-break: break-all;
+}
+
+/* Fix button overflow */
+button, a[class*="px-"], a[class*="py-"] {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ============================================
+   BREAKPOINT: 320px (Small Mobile)
+   ============================================ */
+@media (max-width: 320px) {
+  /* Reduce padding */
+  .px-6 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .py-20, .py-24 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .pt-32 {
+    padding-top: 4rem;
+  }
+  
+  .pb-20 {
+    padding-bottom: 2rem;
+  }
+  
+  /* Reduce font sizes */
+  .text-6xl {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+  
+  .text-5xl {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  .text-4xl {
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+  
+  .text-2xl {
+    font-size: 1.25rem;
+  }
+  
+  .text-xl {
+    font-size: 1rem;
+  }
+  
+  .text-lg {
+    font-size: 0.9375rem;
+  }
+  
+  /* Reduce button padding */
+  .px-8 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .py-4 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+  
+  /* Reduce gaps */
+  .gap-8, .gap-12 {
+    gap: 1rem;
+  }
+  
+  .gap-6 {
+    gap: 0.75rem;
+  }
+  
+  /* Fix navbar */
+  .navbar {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  /* Fix card padding */
+  .p-6 {
+    padding: 1rem;
+  }
+  
+  /* Reduce margins */
+  .mb-16, .mb-12 {
+    margin-bottom: 2rem;
+  }
+  
+  .mb-8 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .mb-6 {
+    margin-bottom: 1rem;
+  }
+}
+
+/* ============================================
+   BREAKPOINT: 375px (Mobile)
+   ============================================ */
+@media (min-width: 321px) and (max-width: 375px) {
+  /* Adjust padding */
+  .px-6 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .py-20 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  .pt-32 {
+    padding-top: 5rem;
+  }
+  
+  /* Adjust font sizes */
+  .text-6xl {
+    font-size: 3rem;
+  }
+  
+  .text-5xl {
+    font-size: 2.25rem;
+  }
+  
+  .text-4xl {
+    font-size: 2rem;
+  }
+  
+  /* Adjust gaps */
+  .gap-12 {
+    gap: 1.5rem;
+  }
+  
+  .gap-8 {
+    gap: 1.25rem;
+  }
+}
+
+/* ============================================
+   BREAKPOINT: 425px (Large Mobile)
+   ============================================ */
+@media (min-width: 376px) and (max-width: 425px) {
+  /* Slight adjustments */
+  .px-6 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  
+  .gap-12 {
+    gap: 2rem;
+  }
+}
+
+/* ============================================
+   BREAKPOINT: 768px (Tablet)
+   ============================================ */
+@media (min-width: 426px) and (max-width: 768px) {
+  /* Ensure proper stacking */
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .md\:grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Adjust spacing */
+  .gap-12 {
+    gap: 2rem;
+  }
+  
+  /* Fix flex layouts */
+  .flex-row {
+    flex-direction: column;
+  }
+  
+  /* Center align on tablet */
+  .text-left {
+    text-align: center;
+  }
+  
+  /* Adjust padding */
+  .px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  /* Fix navbar items */
+  .navbar .flex {
+    flex-wrap: wrap;
+  }
+  
+  /* Ensure buttons stack */
+  .flex-row.gap-4 {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  /* Fix card layouts */
+  .flex.flex-col.md\:flex-row {
+    flex-direction: column;
+  }
+  
+  /* Fix track items */
+  .track-item .flex.flex-col.md\:flex-row {
+    flex-direction: column;
+  }
+  
+  /* Fix contact grid */
+  .grid.grid-cols-1.lg\:grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   BREAKPOINT: 1024px (Small Desktop / Large Tablet)
+   ============================================ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Allow 2 columns on large tablets */
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Adjust max-widths */
+  .max-w-7xl {
+    max-width: 95%;
+  }
+  
+  .max-w-6xl {
+    max-width: 95%;
+  }
+  
+  .max-w-5xl {
+    max-width: 95%;
+  }
+  
+  /* Fix spacing */
+  .gap-12 {
+    gap: 2.5rem;
+  }
+  
+  /* Ensure proper text wrapping */
+  p, .text-sm, .text-base {
+    max-width: 100%;
+  }
+}
+
+/* ============================================
+   GENERAL MOBILE FIXES (All mobile sizes)
+   ============================================ */
+@media (max-width: 768px) {
+  /* Prevent horizontal scroll */
+  * {
+    max-width: 100%;
+  }
+  
+  /* Fix navbar */
+  .navbar {
+    padding: 1rem 1rem;
+  }
+  
+  .navbar .max-w-7xl {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  /* Fix hero section */
+  section.relative.min-h-screen {
+    min-height: auto;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+  
+  /* Fix section padding */
+  section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Fix buttons */
+  a[class*="px-8"], button[class*="px-8"] {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    font-size: 0.9375rem;
+  }
+  
+  /* Fix cards */
+  .bg-white\/5.rounded-lg,
+  .bg-white\/5.rounded-xl {
+    padding: 1.25rem;
+  }
+  
+  /* Fix forms */
+  input, textarea, select {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Fix progress bars */
+  .progress-bar {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Fix audio players */
+  audio {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Fix track items */
+  .track-item {
+    padding: 1rem;
+  }
+  
+  .track-item .flex {
+    flex-direction: column;
+  }
+  
+  /* Fix album art sizes */
+  .w-24.h-24,
+  .w-32.h-32 {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    aspect-ratio: 1;
+  }
+  
+  /* Fix play buttons */
+  .play-btn {
+    width: 3.5rem;
+    height: 3.5rem;
+    min-width: 3.5rem;
+    min-height: 3.5rem;
+  }
+  
+  /* Fix spacing in track items */
+  .track-item .gap-6 {
+    gap: 1rem;
+  }
+  
+  /* Fix text sizes */
+  .text-xl.md\:text-2xl {
+    font-size: 1.125rem;
+  }
+  
+  /* Fix contact cards */
+  .bg-white\/5.rounded-lg.p-6 {
+    padding: 1.25rem;
+  }
+  
+  /* Fix grid gaps */
+  .grid.gap-8 {
+    gap: 1.5rem;
+  }
+  
+  /* Fix aspect ratios */
+  .aspect-video {
+    aspect-ratio: 16 / 9;
+    max-width: 100%;
+  }
+  
+  .aspect-square {
+    aspect-ratio: 1;
+    max-width: 100%;
+  }
+  
+  /* Fix footer */
+  footer .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  /* Fix mobile menu */
+  .mobile-menu {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Fix long text in cards */
+  .text-sm, .text-base, .text-lg {
+    word-break: break-word;
+  }
+  
+  /* Fix email links */
+  a[href^="mailto:"] {
+    word-break: break-all;
+    font-size: 0.875rem;
+  }
+}
+
+/* ============================================
+   TABLET SPECIFIC FIXES (768px - 1024px)
+   ============================================ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Allow 2 columns where appropriate */
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Fix spacing */
+  .px-6 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  /* Fix max-widths */
+  .max-w-7xl {
+    max-width: 95%;
+  }
+  
+  /* Fix gaps */
+  .gap-12 {
+    gap: 2rem;
+  }
+  
+  /* Fix track items layout */
+  .track-item .flex.flex-col.md\:flex-row {
+    flex-direction: row;
+  }
+  
+  /* Fix contact grid */
+  .grid.grid-cols-1.lg\:grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Fix buttons */
+  .flex.flex-col.sm\:flex-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/* ============================================
+   DESKTOP: Keep unchanged (min-width: 1025px)
+   ============================================ */
+@media (min-width: 1025px) {
+  /* Desktop styles remain as designed */
+  /* No overrides needed */
+}
+
+/* ============================================
+   UTILITY FIXES
+   ============================================ */
+
+/* Ensure all containers respect viewport */
+.container,
+[class*="max-w-"] {
+  box-sizing: border-box;
+}
+
+/* Fix overflow in flex containers */
+.flex {
+  min-width: 0;
+}
+
+.flex-1 {
+  min-width: 0;
+}
+
+/* Fix text truncation */
+.truncate,
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Fix long words */
+.word-break {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Fix images in containers */
+.rounded-lg img,
+.rounded-xl img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Fix SVG icons */
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix navbar logo */
+.navbar a.flex.items-center {
+  flex-shrink: 0;
+}
+
+/* Fix mobile menu button */
+.mobile-menu-btn {
+  flex-shrink: 0;
+}
+
+/* Prevent text from breaking layout */
+h1, h2, h3, h4, h5, h6 {
+  hyphens: auto;
+  word-break: break-word;
+}
+
+/* Fix form elements */
+form {
+  width: 100%;
+  max-width: 100%;
+}
+
+form input,
+form textarea,
+form select,
+form button {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Fix grid items */
+.grid > * {
+  min-width: 0;
+}
+
+/* Fix aspect ratio containers */
+.aspect-video,
+.aspect-square {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+.aspect-video::before,
+.aspect-square::before {
+  content: '';
+  display: block;
+}
+
+.aspect-video img,
+.aspect-square img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+/* Fix profile image on about page */
+.w-64.h-64,
+.w-80.h-80 {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  aspect-ratio: 1;
+}
+
+@media (max-width: 768px) {
+  .w-64.h-64,
+  .w-80.h-80 {
+    max-width: 200px;
+  }
+}
+
+/* Fix grid columns on mobile */
+@media (max-width: 768px) {
+  .grid.grid-cols-1.md\:grid-cols-5 {
+    grid-template-columns: 1fr;
+  }
+  
+  .md\:col-span-2,
+  .md\:col-span-3 {
+    grid-column: 1;
+  }
+  
+  /* Fix order on mobile */
+  .order-2.md\:order-1 {
+    order: 1;
+  }
+  
+  .order-1.md\:order-2 {
+    order: 2;
+  }
+}
+
+/* Navbar: Mobile and Tablet (up to 1024px) - Use mobile hamburger menu */
+@media (max-width: 1024px) {
+  .navbar .max-w-7xl {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .navbar a.flex.items-center {
+    font-size: 1.125rem;
+  }
+  
+  .navbar svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  /* Force hide desktop navigation on tablet */
+  .navbar .hidden.lg\:flex {
+    display: none !important;
+  }
+  
+  /* Force show mobile menu button on tablet */
+  .navbar .mobile-menu-btn.lg\:hidden {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Mobile menu container - show when toggled */
+  .navbar .mobile-menu.lg\:hidden:not(.hidden) {
+    display: block;
+  }
+  
+  /* Mobile menu dropdown - white background covering full screen width */
+  .navbar {
+    position: relative;
+    overflow: visible;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  .mobile-menu {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    margin-top: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+    background: #ffffff !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    top: 100% !important;
+    z-index: 9999;
+  }
+  
+  /* Override any margin-top classes from HTML */
+  .mobile-menu.mt-4,
+  .mobile-menu[class*="mt-"] {
+    margin-top: 0 !important;
+  }
+  
+  .mobile-menu > div {
+    background: #ffffff;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+  }
+  
+  .mobile-menu a,
+  .mobile-menu .nav-link {
+    color: #1a1a1a !important;
+  }
+  
+  .mobile-menu a:hover,
+  .mobile-menu .nav-link:hover {
+    background: rgba(0, 0, 0, 0.05) !important;
+    color: #8B5CF6 !important;
+  }
+  
+  .mobile-menu button.theme-toggle {
+    color: #1a1a1a !important;
+  }
+  
+  .mobile-menu button.theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.05) !important;
+  }
+  
+  .mobile-menu .text-sm,
+  .mobile-menu .text-sm.font-medium {
+    color: #1a1a1a !important;
+  }
+  
+  .mobile-menu .bg-accent {
+    background: #8B5CF6 !important;
+    color: #ffffff !important;
+  }
+  
+  .mobile-menu .bg-accent:hover {
+    background: rgba(139, 92, 246, 0.9) !important;
+    color: #ffffff !important;
+  }
+  
+  .mobile-menu .border-t.border-white\/10 {
+    border-top-color: rgba(0, 0, 0, 0.1) !important;
+  }
+}
+
+/* Fix section headers */
+@media (max-width: 768px) {
+  section.pt-32 {
+    padding-top: 4rem;
+  }
+  
+  section.pb-20 {
+    padding-bottom: 2rem;
+  }
+}
+
+/* Fix text alignment on mobile */
+@media (max-width: 768px) {
+  .text-center.md\:text-left {
+    text-align: center;
+  }
+  
+  .mx-auto.md\:mx-0 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Fix spacing in about page */
+@media (max-width: 768px) {
+  .gap-12 {
+    gap: 2rem;
+  }
+  
+  .mb-16 {
+    margin-bottom: 2rem;
+  }
+  
+  .space-y-12 > * + * {
+    margin-top: 2rem;
+  }
+}
+
+/* Fix contact form on mobile */
+@media (max-width: 768px) {
+  .grid.grid-cols-1.lg\:grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  .lg\:col-span-1 {
+    grid-column: 1;
+  }
+  
+  .lg\:col-span-2 {
+    grid-column: 1;
+  }
+}
+
+/* Fix footer on mobile */
+@media (max-width: 768px) {
+  footer .grid.grid-cols-1.md\:grid-cols-4 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  footer .mb-8 {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Fix services page */
+@media (max-width: 768px) {
+  .grid.grid-cols-1.md\:grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Fix projects page */
+@media (max-width: 768px) {
+  .grid.grid-cols-1.md\:grid-cols-2.gap-12 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Ensure no element exceeds viewport */
+@media (max-width: 768px) {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  main, section, article, aside, nav, header, footer {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+

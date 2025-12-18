@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music · Alex Rivers</title>
+    <meta name="description" content="Explore my collection of electronic, hip-hop, and cinematic tracks.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#8B5CF6',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .slide-in-left.animate-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .slide-in-right.animate-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scale-in.animate-in {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .navbar {
+            transition: all 0.3s ease;
+        }
+        .navbar.scrolled {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .play-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        .play-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
+        }
+        .play-btn.playing {
+            background: #8B5CF6 !important;
+            color: white !important;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { 
+                box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7);
+            }
+            50% { 
+                box-shadow: 0 0 0 15px rgba(139, 92, 246, 0);
+            }
+        }
+        .track-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .track-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .track-card.playing {
+            border-color: #8B5CF6;
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+        }
+        .album-art {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .track-card:hover .album-art {
+            transform: scale(1.08) rotate(2deg);
+        }
+        .progress-bar {
+            height: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: height 0.2s;
+        }
+        .progress-bar:hover {
+            height: 6px;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #8B5CF6, #A78BFA);
+            border-radius: 3px;
+            transition: width 0.1s linear;
+            position: relative;
+            overflow: hidden;
+        }
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .waveform {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            height: 24px;
+            margin-top: 8px;
+        }
+        .wave-bar {
+            width: 4px;
+            background: #8B5CF6;
+            border-radius: 2px;
+            animation: wave 1.2s ease-in-out infinite;
+        }
+        .wave-bar:nth-child(1) { animation-delay: 0s; }
+        .wave-bar:nth-child(2) { animation-delay: 0.15s; }
+        .wave-bar:nth-child(3) { animation-delay: 0.3s; }
+        .wave-bar:nth-child(4) { animation-delay: 0.45s; }
+        .wave-bar:nth-child(5) { animation-delay: 0.6s; }
+        .wave-bar:nth-child(6) { animation-delay: 0.75s; }
+        @keyframes wave {
+            0%, 100% { 
+                height: 6px;
+                transform: scaleY(0.3);
+            }
+            50% { 
+                height: 24px;
+                transform: scaleY(1);
+            }
+        }
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            33% { transform: translateY(-20px) translateX(10px); }
+            66% { transform: translateY(10px) translateX(-10px); }
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #f5f5f5, #d0d0d0, #8B5CF6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+        html.light .gradient-text {
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a, #8B5CF6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+        .genre-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(139, 92, 246, 0.15);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #8B5CF6;
+            transition: all 0.3s;
+        }
+        .track-card:hover .genre-badge {
+            background: rgba(139, 92, 246, 0.25);
+            border-color: rgba(139, 92, 246, 0.5);
+        }
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #8B5CF6, transparent);
+            margin: 3rem 0;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body class="bg-[#1a1a1a] text-[#f5f5f5] transition-colors duration-300">
+    
+    <!-- Navbar -->
+    <nav class="navbar fixed top-0 left-0 right-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 text-2xl font-serif font-bold text-accent">
+                <svg class="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18V5l12-2v13"></path>
+                    <circle cx="6" cy="18" r="3"></circle>
+                    <circle cx="18" cy="16" r="3"></circle>
+                </svg>
+                <span>Alex Rivers</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="index.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Home</a>
+                <a href="music.html" class="nav-link text-sm font-medium text-accent transition-colors">Music</a>
+                <a href="projects.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Projects</a>
+                <a href="services.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Services</a>
+                <a href="about.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">About</a>
+                <a href="contact.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Contact</a>
+                
+                <button class="theme-toggle p-2 rounded-lg hover:bg-white/10 transition-colors">
+                    <span class="theme-icon">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </span>
+                </button>
+                
+                <a href="login.html" class="text-sm font-medium hover:text-accent transition-colors">Login</a>
+                <a href="signup.html" class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Sign Up</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu hidden lg:hidden">
+            <div class="flex flex-col">
+                <a href="index.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Home</a>
+                <a href="music.html" class="nav-link text-sm font-medium text-accent transition-colors">Music</a>
+                <a href="projects.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Projects</a>
+                <a href="services.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Services</a>
+                <a href="about.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">About</a>
+                <a href="contact.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Contact</a>
+                <div class="flex items-center justify-between pt-4 border-t border-white/10 mt-4">
+                    <button class="theme-toggle p-2 rounded-lg hover:bg-white/10 transition-colors">
+                        <span class="theme-icon">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="flex space-x-4">
+                        <a href="login.html" class="text-sm font-medium hover:text-accent transition-colors">Login</a>
+                        <a href="signup.html" class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 px-6 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-accent/10 via-accent/5 to-transparent opacity-50"></div>
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl float"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl float" style="animation-delay: 2s;"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto text-center">
+            <div class="fade-in">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-6 gradient-text">
+                    Music Collection
+                </h1>
+                <div class="w-24 h-1 bg-accent mx-auto mb-8"></div>
+            </div>
+            <p class="text-xl md:text-2xl text-[#b0b0b0] max-w-3xl mx-auto leading-relaxed fade-in" style="--delay: 1">
+                A curated selection of original compositions and productions across electronic, hip-hop, and cinematic genres. Each track tells a story.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Tracklist -->
+    <section class="py-12 px-6 pb-20">
+        <div class="max-w-6xl mx-auto">
+            <div class="space-y-8">
+                
+                <!-- Track 1 -->
+                <div class="track-card fade-in bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 hover:border-white/20 transition-all" style="--delay: 0">
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-center">
+                        <!-- Album Art -->
+                        <div class="flex-shrink-0 w-full md:w-auto">
+                            <div class="w-full md:w-40 h-40 rounded-xl overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5 album-art shadow-lg">
+                                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop&auto=format&q=80" alt="Midnight Drive" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.05))';">
+                            </div>
+                        </div>
+                        
+                        <!-- Track Info & Controls -->
+                        <div class="flex-1 min-w-0 w-full">
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <h3 class="text-2xl md:text-3xl font-serif font-bold">Midnight Drive</h3>
+                                        <span class="genre-badge">Electronic</span>
+                                    </div>
+                                    <p class="text-sm text-[#b0b0b0]">2024 · Atmospheric electronic journey</p>
+                                </div>
+                                <button class="play-btn w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-all flex-shrink-0 shadow-lg" data-track="1">
+                                    <svg class="w-7 h-7 ml-1 play-icon" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                    <svg class="w-7 h-7 pause-icon hidden" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            
+                            <!-- Progress Bar -->
+                            <div class="progress-bar mb-3" data-progress="1">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            
+                            <!-- Time Display -->
+                            <div class="flex items-center justify-between text-sm text-[#b0b0b0] mb-2">
+                                <span class="current-time">0:00</span>
+                                <span class="total-time">3:42</span>
+                            </div>
+                            
+                            <!-- Waveform (shown when playing) -->
+                            <div class="waveform hidden" data-waveform="1">
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <audio preload="metadata" data-audio="1" crossorigin="anonymous">
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                
+                <!-- Track 2 -->
+                <div class="track-card fade-in bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 hover:border-white/20 transition-all" style="--delay: 1">
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-center">
+                        <div class="flex-shrink-0 w-full md:w-auto">
+                            <div class="w-full md:w-40 h-40 rounded-xl overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5 album-art shadow-lg">
+                                <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=400&h=400&fit=crop&auto=format&q=80" alt="Urban Dreams" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.05))';">
+                            </div>
+                        </div>
+                        <div class="flex-1 min-w-0 w-full">
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <h3 class="text-2xl md:text-3xl font-serif font-bold">Urban Dreams</h3>
+                                        <span class="genre-badge">Hip-Hop</span>
+                                    </div>
+                                    <p class="text-sm text-[#b0b0b0]">2024 · Street-inspired beats</p>
+                                </div>
+                                <button class="play-btn w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-all flex-shrink-0 shadow-lg" data-track="2">
+                                    <svg class="w-7 h-7 ml-1 play-icon" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                    <svg class="w-7 h-7 pause-icon hidden" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="progress-bar mb-3" data-progress="2">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <div class="flex items-center justify-between text-sm text-[#b0b0b0] mb-2">
+                                <span class="current-time">0:00</span>
+                                <span class="total-time">4:15</span>
+                            </div>
+                            <div class="waveform hidden" data-waveform="2">
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <audio preload="metadata" data-audio="2" crossorigin="anonymous">
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                
+                <!-- Track 3 -->
+                <div class="track-card fade-in bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 hover:border-white/20 transition-all" style="--delay: 2">
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-center">
+                        <div class="flex-shrink-0 w-full md:w-auto">
+                            <div class="w-full md:w-40 h-40 rounded-xl overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5 album-art shadow-lg">
+                                <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400&h=400&fit=crop&auto=format&q=80" alt="Cinematic Horizon" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.05))';">
+                            </div>
+                        </div>
+                        <div class="flex-1 min-w-0 w-full">
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <h3 class="text-2xl md:text-3xl font-serif font-bold">Cinematic Horizon</h3>
+                                        <span class="genre-badge">Cinematic</span>
+                                    </div>
+                                    <p class="text-sm text-[#b0b0b0]">2024 · Orchestral soundscape</p>
+                                </div>
+                                <button class="play-btn w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-all flex-shrink-0 shadow-lg" data-track="3">
+                                    <svg class="w-7 h-7 ml-1 play-icon" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                    <svg class="w-7 h-7 pause-icon hidden" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="progress-bar mb-3" data-progress="3">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <div class="flex items-center justify-between text-sm text-[#b0b0b0] mb-2">
+                                <span class="current-time">0:00</span>
+                                <span class="total-time">5:28</span>
+                            </div>
+                            <div class="waveform hidden" data-waveform="3">
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <audio preload="metadata" data-audio="3" crossorigin="anonymous">
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                
+                <!-- Track 4 -->
+                <div class="track-card fade-in bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 hover:border-white/20 transition-all" style="--delay: 3">
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-center">
+                        <div class="flex-shrink-0 w-full md:w-auto">
+                            <div class="w-full md:w-40 h-40 rounded-xl overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5 album-art shadow-lg">
+                                <img src="https://images.unsplash.com/photo-1571974599782-87624638275c?w=400&h=400&fit=crop&auto=format&q=80" alt="Neon Nights" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.05))';">
+                            </div>
+                        </div>
+                        <div class="flex-1 min-w-0 w-full">
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <h3 class="text-2xl md:text-3xl font-serif font-bold">Neon Nights</h3>
+                                        <span class="genre-badge">Electronic</span>
+                                    </div>
+                                    <p class="text-sm text-[#b0b0b0]">2024 · Synthwave vibes</p>
+                                </div>
+                                <button class="play-btn w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-all flex-shrink-0 shadow-lg" data-track="4">
+                                    <svg class="w-7 h-7 ml-1 play-icon" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                    <svg class="w-7 h-7 pause-icon hidden" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="progress-bar mb-3" data-progress="4">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <div class="flex items-center justify-between text-sm text-[#b0b0b0] mb-2">
+                                <span class="current-time">0:00</span>
+                                <span class="total-time">3:58</span>
+                            </div>
+                            <div class="waveform hidden" data-waveform="4">
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <audio preload="metadata" data-audio="4" crossorigin="anonymous">
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                
+                <!-- Track 5 -->
+                <div class="track-card fade-in bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 hover:border-white/20 transition-all" style="--delay: 4">
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-center">
+                        <div class="flex-shrink-0 w-full md:w-auto">
+                            <div class="w-full md:w-40 h-40 rounded-xl overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5 album-art shadow-lg">
+                                <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=400&h=400&fit=crop&auto=format&q=80" alt="Street Symphony" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.05))';">
+                            </div>
+                        </div>
+                        <div class="flex-1 min-w-0 w-full">
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <h3 class="text-2xl md:text-3xl font-serif font-bold">Street Symphony</h3>
+                                        <span class="genre-badge">Hip-Hop</span>
+                                    </div>
+                                    <p class="text-sm text-[#b0b0b0]">2024 · Urban rhythm</p>
+                                </div>
+                                <button class="play-btn w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-all flex-shrink-0 shadow-lg" data-track="5">
+                                    <svg class="w-7 h-7 ml-1 play-icon" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                    <svg class="w-7 h-7 pause-icon hidden" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="progress-bar mb-3" data-progress="5">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <div class="flex items-center justify-between text-sm text-[#b0b0b0] mb-2">
+                                <span class="current-time">0:00</span>
+                                <span class="total-time">4:32</span>
+                            </div>
+                            <div class="waveform hidden" data-waveform="5">
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <audio preload="metadata" data-audio="5" crossorigin="anonymous">
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                
+                <!-- Track 6 -->
+                <div class="track-card fade-in bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 hover:border-white/20 transition-all" style="--delay: 5">
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-center">
+                        <div class="flex-shrink-0 w-full md:w-auto">
+                            <div class="w-full md:w-40 h-40 rounded-xl overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5 album-art shadow-lg">
+                                <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400&h=400&fit=crop&auto=format&q=80" alt="Ethereal Journey" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.05))';">
+                            </div>
+                        </div>
+                        <div class="flex-1 min-w-0 w-full">
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <h3 class="text-2xl md:text-3xl font-serif font-bold">Ethereal Journey</h3>
+                                        <span class="genre-badge">Cinematic</span>
+                                    </div>
+                                    <p class="text-sm text-[#b0b0b0]">2024 · Ambient exploration</p>
+                                </div>
+                                <button class="play-btn w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-all flex-shrink-0 shadow-lg" data-track="6">
+                                    <svg class="w-7 h-7 ml-1 play-icon" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                    <svg class="w-7 h-7 pause-icon hidden" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="progress-bar mb-3" data-progress="6">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <div class="flex items-center justify-between text-sm text-[#b0b0b0] mb-2">
+                                <span class="current-time">0:00</span>
+                                <span class="total-time">6:12</span>
+                            </div>
+                            <div class="waveform hidden" data-waveform="6">
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <audio preload="metadata" data-audio="6" crossorigin="anonymous">
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-12 px-6 mt-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 18V5l12-2v13"></path>
+                            <circle cx="6" cy="18" r="3"></circle>
+                            <circle cx="18" cy="16" r="3"></circle>
+                        </svg>
+                        <h3 class="text-xl font-serif font-bold text-accent">Alex Rivers</h3>
+                    </div>
+                    <p class="text-sm text-[#b0b0b0]">Music Producer · Sound Designer</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Home</a></li>
+                        <li><a href="music.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Music</a></li>
+                        <li><a href="projects.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Projects</a></li>
+                        <li><a href="services.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Services</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="text-[#b0b0b0] hover:text-accent transition-colors">About</a></li>
+                        <li><a href="contact.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-[#b0b0b0] hover:text-accent transition-colors">Instagram</a></li>
+                        <li><a href="#" class="text-[#b0b0b0] hover:text-accent transition-colors">Spotify</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-[#b0b0b0] hover:text-accent transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-[#b0b0b0] hover:text-accent transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 text-center text-sm text-[#b0b0b0]">
+                <p>&copy; 2025 Alex Rivers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
