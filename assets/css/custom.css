@@ -70,6 +70,49 @@ html.light ::-webkit-scrollbar-thumb:hover {
   background: #bbb;
 }
 
+/* Heading size normalization */
+.text-9xl {
+  font-size: 4rem;
+  line-height: 1.1;
+}
+.text-8xl {
+  font-size: 3.5rem;
+  line-height: 1.1;
+}
+.text-7xl {
+  font-size: 3rem;
+  line-height: 1.15;
+}
+.text-6xl {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+.text-5xl {
+  font-size: 2rem;
+  line-height: 1.25;
+}
+.text-4xl {
+  font-size: 1.75rem;
+  line-height: 1.3;
+}
+
+.px-10 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.py-5 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.px-8 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.py-4 {
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+}
+
 /* Audio player custom styling */
 audio {
   width: 100%;
@@ -135,7 +178,19 @@ h1, h2, h3, h4, h5, h6, p, a, span {
 
 /* Fix long URLs and emails */
 a {
-  word-break: break-all;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* Signup terms label: prevent mid-word breaks and tighten line height */
+.terms-label {
+  word-break: keep-all;
+  overflow-wrap: normal;
+  line-height: 1.25;
+}
+.terms-label a {
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 
 /* Fix button overflow */
@@ -949,4 +1004,3 @@ form button {
     overflow-x: hidden;
   }
 }
-
