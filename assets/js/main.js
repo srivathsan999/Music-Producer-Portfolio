@@ -269,10 +269,26 @@
     initAudioPlayers();
   }
 
+  // Set active state for Home dropdown
+  const setHomeDropdownActive = () => {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const homeDropdown = document.querySelector('.dropdown button#home-dropdown, .mobile-dropdown-toggle');
+    
+    if (homeDropdown && (currentPage === 'index.html' || currentPage === 'home2.html' || currentPage === '')) {
+      homeDropdown.classList.add('text-accent');
+    }
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setHomeDropdownActive);
+  } else {
+    setHomeDropdownActive();
+  }
+
   // Mobile menu toggle
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
   const mobileMenu = document.querySelector('.mobile-menu');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinks = document.querySelectorAll('.nav-link:not(.mobile-dropdown-toggle)');
 
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener('click', () => {
@@ -280,13 +296,103 @@
       mobileMenuBtn.classList.toggle('active');
     });
 
-    // Close menu when clicking a link
+    // Close menu when clicking a link (but not dropdown toggles)
     navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        // Don't close if clicking inside a dropdown
+        if (!link.closest('.mobile-dropdown')) {
+          mobileMenu.classList.add('hidden');
+          mobileMenuBtn.classList.remove('active');
+        }
+      });
+    });
+
+    // Close menu when clicking dropdown menu items
+    document.querySelectorAll('.mobile-dropdown-menu a').forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
         mobileMenuBtn.classList.remove('active');
       });
     });
   }
+
+  // Mobile dropdown toggle (must run before navLinks handler)
+  const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+  mobileDropdownToggles.forEach(toggle => {
+    // Use capture phase to ensure this runs first
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      
+      const dropdown = toggle.closest('.mobile-dropdown');
+      const menu = dropdown?.querySelector('.mobile-dropdown-menu');
+      const icon = toggle.querySelector('svg');
+      
+      if (menu) {
+        const isHidden = menu.classList.contains('hidden');
+        
+        // Close all other dropdowns
+        document.querySelectorAll('.mobile-dropdown-menu').forEach(m => {
+          if (m !== menu) {
+            m.classList.add('hidden');
+          }
+        });
+        document.querySelectorAll('.mobile-dropdown-toggle svg').forEach(svg => {
+          if (svg !== icon) {
+            svg.style.transform = '';
+          }
+        });
+        
+        // Toggle current dropdown
+        if (isHidden) {
+          menu.classList.remove('hidden');
+          if (icon) icon.style.transform = 'rotate(180deg)';
+          toggle.setAttribute('aria-expanded', 'true');
+        } else {
+          menu.classList.add('hidden');
+          if (icon) icon.style.transform = '';
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      }
+      
+      return false;
+    }, true); // Use capture phase
+  });
+
+  // Close dropdowns when clicking outside (but don't close mobile menu)
+  document.addEventListener('click', (e) => {
+    // Don't close dropdowns if clicking inside mobile dropdown
+    if (!e.target.closest('.mobile-dropdown')) {
+      // Only close dropdowns if not clicking on mobile menu button
+      if (!e.target.closest('.mobile-menu-btn')) {
+        document.querySelectorAll('.mobile-dropdown-menu').forEach(menu => {
+          menu.classList.add('hidden');
+        });
+        document.querySelectorAll('.mobile-dropdown-toggle').forEach(toggle => {
+          const icon = toggle.querySelector('svg');
+          if (icon) icon.style.transform = '';
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      }
+    }
+  });
+
+  // Keyboard navigation for dropdowns
+  document.querySelectorAll('.dropdown button, .mobile-dropdown-toggle').forEach(button => {
+    button.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        button.click();
+      } else if (e.key === 'Escape') {
+        const dropdown = button.closest('.dropdown, .mobile-dropdown');
+        const menu = dropdown?.querySelector('.dropdown-menu, .mobile-dropdown-menu');
+        if (menu && !menu.classList.contains('hidden')) {
+          menu.classList.add('hidden');
+          button.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
+  });
 })();
 
