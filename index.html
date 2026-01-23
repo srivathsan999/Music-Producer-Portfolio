@@ -260,30 +260,36 @@
     </nav>
     
     <!-- Hero Section -->
-    <section class="relative pt-16 pb-10 px-6 overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-accent/10 via-accent/5 to-transparent opacity-50"></div>
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute top-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl float"></div>
-            <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl float" style="animation-delay: 2s;"></div>
-        </div>
-        <div class="relative z-10 max-w-5xl mx-auto text-center">
+    <section class="relative pt-24 pb-20 px-6 overflow-hidden min-h-[85vh] flex items-center">
+        <!-- Background Image -->
+        <div class="hero-bg"></div>
+        
+        <!-- Additional gradient overlay for better text readability -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/50 z-[1]"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30 z-[1]"></div>
+        
+        <!-- Content -->
+        <div class="relative z-10 max-w-5xl mx-auto text-center w-full">
             <div class="hero-text mb-8">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-4 leading-tight hero-title">
-                    Music Producer
+                <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold mb-4 leading-tight hero-title drop-shadow-lg">
+                    Alex Rivers
                 </h1>
-                <div class="w-16 h-1 bg-accent mx-auto mb-6"></div>
+                <div class="w-20 h-1 bg-accent mx-auto mb-6 shadow-lg"></div>
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-serif font-medium mb-6 text-white/90 drop-shadow-md">
+                    Music Producer
+                </h2>
             </div>
-            <p class="text-base md:text-lg lg:text-xl text-[#d0d0d0] mb-8 max-w-2xl mx-auto leading-relaxed fade-in" style="--delay: 1">
+            <p class="text-base md:text-lg lg:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed fade-in drop-shadow-lg" style="--delay: 1">
                 Crafting soundscapes that move the soul. Electronic, hip-hop, and cinematic compositions.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in" style="--delay: 2">
-                <a href="music.html" class="group px-6 py-3 bg-accent text-white rounded-lg text-base font-medium hover:bg-accent/90 transition-all shadow-lg shadow-accent/30 flex items-center gap-2">
+                <a href="music.html" class="group px-8 py-4 bg-accent text-white rounded-lg text-base font-medium hover:bg-accent/90 transition-all shadow-xl shadow-accent/40 flex items-center gap-2 backdrop-blur-sm">
                     <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M8 5v14l11-7z"/>
                     </svg>
                     Listen Now
                 </a>
-                <a href="projects.html" class="px-6 py-3 border-2 border-accent text-accent rounded-lg text-base font-medium hover:bg-accent/10 transition-all flex items-center gap-2">
+                <a href="projects.html" class="px-8 py-4 border-2 border-white/30 backdrop-blur-sm bg-white/10 text-white rounded-lg text-base font-medium hover:bg-white/20 hover:border-white/50 transition-all flex items-center gap-2 shadow-xl">
                     View Projects
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>

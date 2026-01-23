@@ -1089,20 +1089,104 @@ html.light .bg-white\/5.rounded-xl.border.border-white\/10:hover {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../img/portrait.jpg');
+  /* Placeholder image - replace with your portrait image at assets/img/alex-rivers-portrait.jpg */
+  background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1920&h=1080&fit=crop&auto=format&q=80');
+  /* To use your own image, uncomment the line below and comment the line above */
+  /* background-image: url('../img/alex-rivers-portrait.jpg'); */
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
-  filter: saturate(1.05) contrast(1.05);
+  filter: saturate(1.1) contrast(1.1) brightness(0.85);
+  z-index: 0;
 }
+
+/* Note: If alex-rivers-portrait.jpg doesn't exist, add your portrait image to assets/img/ 
+   or replace the URL above with your image path. The gradient overlays will still work. */
+
+/* Dark mode overlay adjustments */
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.4) 0%,
+    rgba(0,0,0,0.3) 50%,
+    rgba(0,0,0,0.5) 100%
+  );
+  z-index: 1;
+}
+
+/* Light mode adjustments */
+html.light .hero-bg {
+  filter: saturate(1.15) contrast(1.15) brightness(1.1);
+}
+
+html.light .hero-bg::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.5) 0%,
+    rgba(255,255,255,0.4) 50%,
+    rgba(255,255,255,0.6) 100%
+  );
+}
+
+/* Light mode hero section overlay adjustments */
+html.light section.relative.pt-24.pb-20 {
+  color: #1a1a1a;
+}
+
+html.light section.relative.pt-24.pb-20 .absolute.inset-0.bg-gradient-to-b.from-black\/60 {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.4) 100%);
+}
+
+html.light section.relative.pt-24.pb-20 .absolute.inset-0.bg-gradient-to-r.from-black\/30 {
+  background: linear-gradient(to right, rgba(255,255,255,0.2) 0%, transparent 50%, rgba(255,255,255,0.2) 100%);
+}
+
+/* Hero text adjustments for light mode */
+html.light .hero-title {
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+html.light section.relative.pt-24.pb-20 h2,
+html.light section.relative.pt-24.pb-20 p {
+  color: #1a1a1a;
+  text-shadow: 0 1px 3px rgba(255,255,255,0.8);
+}
+
+html.light section.relative.pt-24.pb-20 a.border-2.border-white\/30 {
+  border-color: rgba(0,0,0,0.2);
+  background: rgba(255,255,255,0.7);
+  color: #1a1a1a;
+}
+
+html.light section.relative.pt-24.pb-20 a.border-2.border-white\/30:hover {
+  border-color: rgba(0,0,0,0.3);
+  background: rgba(255,255,255,0.85);
+}
+
+/* Responsive hero section */
+@media (max-width: 768px) {
+  section.relative.pt-24.pb-20 {
+    min-height: 70vh;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
+  
+  .hero-bg {
+    background-position: center 30%;
+  }
+}
+
+/* Fallback if image doesn't load */
 .hero-bg::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.35));
-}
-html.light .hero-bg::before {
-  background: linear-gradient(to bottom, rgba(255,255,255,0.55), rgba(255,255,255,0.35));
+  background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%);
+  z-index: -1;
+  opacity: 0.3;
 }
 
 /* Brand icon colors (Contact page) */
