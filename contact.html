@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact · Alex Rivers</title>
     <meta name="description" content="Get in touch with Alex Rivers for music production inquiries and collaborations.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/custom.css">
-    
+
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -34,126 +37,169 @@
             }
         }
     </script>
-    
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
-        h1, h2, h3, h4, h5, h6 {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Playfair Display', serif;
         }
+
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
+
         .fade-in.animate-in {
             opacity: 1;
             transform: translateY(0);
         }
+
         .navbar {
             transition: all 0.3s ease;
         }
+
         .navbar.scrolled {
             background: rgba(26, 26, 26, 0.95);
             backdrop-filter: blur(10px);
         }
-        input, textarea {
+
+        input,
+        textarea {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        html.light input, html.light textarea {
+
+        html.light input,
+        html.light textarea {
             background: rgba(0, 0, 0, 0.05);
             border: 1px solid rgba(0, 0, 0, 0.1);
         }
-        input:focus, textarea:focus {
+
+        input:focus,
+        textarea:focus {
             outline: none;
             border-color: #8B5CF6;
             background: rgba(255, 255, 255, 0.08);
         }
-        html.light input:focus, html.light textarea:focus {
+
+        html.light input:focus,
+        html.light textarea:focus {
             background: rgba(0, 0, 0, 0.08);
         }
+
         .dropdown:hover .dropdown-menu,
         .dropdown.active .dropdown-menu {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
+
         .dropdown-menu {
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
             transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
         }
+
         html.light .dropdown-menu {
             background: rgba(255, 255, 255, 0.95);
             border-color: rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
+
 <body class="bg-[#1a1a1a] text-[#f5f5f5] transition-colors duration-300">
-    
+
     <!-- Navbar -->
     <nav class="navbar fixed top-0 left-0 right-0 z-50 px-6 py-4">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3 text-2xl font-serif font-bold text-accent">
-                <svg class="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <path d="M9 18V5l12-2v13"></path>
                     <circle cx="6" cy="18" r="3"></circle>
                     <circle cx="18" cy="16" r="3"></circle>
                 </svg>
                 <span>Alex Rivers</span>
             </a>
-            
+
             <!-- Desktop Navigation -->
             <div class="hidden lg:flex items-center space-x-8">
-                <div class="dropdown relative" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
-                    <button class="nav-link text-sm font-medium hover:text-accent transition-colors flex items-center gap-1" aria-expanded="false" aria-haspopup="true" id="home-dropdown">
+                <div class="dropdown relative" onmouseenter="this.classList.add('active')"
+                    onmouseleave="this.classList.remove('active')">
+                    <button
+                        class="nav-link text-sm font-medium hover:text-accent transition-colors flex items-center gap-1"
+                        aria-expanded="false" aria-haspopup="true" id="home-dropdown">
                         Home
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
                         </svg>
                     </button>
-                    <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-[#1a1a1a] border border-white/10 rounded-lg shadow-xl py-2" role="menu" aria-labelledby="home-dropdown">
-                        <a href="index.html" class="block px-4 py-2 text-sm hover:bg-white/10 hover:text-accent transition-colors" role="menuitem">Home</a>
-                        <a href="home2.html" class="block px-4 py-2 text-sm hover:bg-white/10 hover:text-accent transition-colors" role="menuitem">Home 2</a>
+                    <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-[#1a1a1a] border border-white/10 rounded-lg shadow-xl py-2"
+                        role="menu" aria-labelledby="home-dropdown">
+                        <a href="index.html"
+                            class="block px-4 py-2 text-sm hover:bg-white/10 hover:text-accent transition-colors"
+                            role="menuitem">Home</a>
+                        <a href="home2.html"
+                            class="block px-4 py-2 text-sm hover:bg-white/10 hover:text-accent transition-colors"
+                            role="menuitem">Home 2</a>
                     </div>
                 </div>
                 <a href="music.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Music</a>
-                <a href="projects.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Projects</a>
-                <a href="services.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Services</a>
+                <a href="projects.html"
+                    class="nav-link text-sm font-medium hover:text-accent transition-colors">Projects</a>
+                <a href="services.html"
+                    class="nav-link text-sm font-medium hover:text-accent transition-colors">Services</a>
                 <a href="about.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">About</a>
                 <a href="contact.html" class="nav-link text-sm font-medium text-accent transition-colors">Contact</a>
-                
+
                 <button class="theme-toggle p-2 rounded-lg hover:bg-white/10 transition-colors">
                     <span class="theme-icon">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                            </path>
                         </svg>
                     </span>
                 </button>
-                
-                <a href="login.html" class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Login</a>
-                <a href="signup.html" class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Sign Up</a>
+
+                <a href="login.html"
+                    class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Login</a>
+                <a href="signup.html"
+                    class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Sign
+                    Up</a>
             </div>
-            
+
             <!-- Mobile Menu Button -->
             <button class="mobile-menu-btn lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
                 </svg>
             </button>
         </div>
-        
+
         <!-- Mobile Menu -->
         <div class="mobile-menu hidden lg:hidden mt-4 pb-4 border-t border-white/10">
             <div class="flex flex-col space-y-4 pt-4">
                 <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-toggle nav-link text-sm font-medium hover:text-accent transition-colors flex items-center justify-between w-full" aria-expanded="false">
+                    <button
+                        class="mobile-dropdown-toggle nav-link text-sm font-medium hover:text-accent transition-colors flex items-center justify-between w-full"
+                        aria-expanded="false">
                         <span>Home</span>
                         <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
                         </svg>
                     </button>
                     <div class="mobile-dropdown-menu hidden mt-2 pl-4 space-y-2">
@@ -162,27 +208,34 @@
                     </div>
                 </div>
                 <a href="music.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Music</a>
-                <a href="projects.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Projects</a>
-                <a href="services.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Services</a>
+                <a href="projects.html"
+                    class="nav-link text-sm font-medium hover:text-accent transition-colors">Projects</a>
+                <a href="services.html"
+                    class="nav-link text-sm font-medium hover:text-accent transition-colors">Services</a>
                 <a href="about.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">About</a>
                 <a href="contact.html" class="nav-link text-sm font-medium text-accent transition-colors">Contact</a>
                 <div class="flex items-center justify-between pt-2">
                     <button class="theme-toggle p-2 rounded-lg hover:bg-white/10 transition-colors">
                         <span class="theme-icon">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                                </path>
                             </svg>
                         </span>
                     </button>
                     <div class="flex space-x-4">
-                        <a href="login.html" class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Login</a>
-                        <a href="signup.html" class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Sign Up</a>
+                        <a href="login.html"
+                            class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Login</a>
+                        <a href="signup.html"
+                            class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Sign
+                            Up</a>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
-    
+
     <!-- Page Header -->
     <section class="pt-32 pb-20 px-6">
         <div class="max-w-7xl mx-auto text-center fade-in">
@@ -192,35 +245,41 @@
             </p>
         </div>
     </section>
-    
+
     <!-- Contact Section -->
     <section class="py-12 px-6 pb-20">
         <div class="max-w-6xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-                
+
                 <!-- Contact Info Cards -->
                 <div class="lg:col-span-1 space-y-6 fade-in">
                     <!-- Email Card -->
                     <div class="bg-white/5 rounded-lg p-6 hover:bg-white/10 transition-all border border-white/10">
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
                                 <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
                                 </svg>
                             </div>
                             <div class="flex-1 min-w-0">
                                 <h3 class="text-lg font-semibold mb-1">Email</h3>
-                                <a href="mailto:hello@alexrivers.com" class="text-accent hover:underline break-all">hello@alexrivers.com</a>
+                                <a href="mailto:hello@alexrivers.com"
+                                    class="text-accent hover:underline break-all">hello@alexrivers.com</a>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Response Time Card -->
                     <div class="bg-white/5 rounded-lg p-6 hover:bg-white/10 transition-all border border-white/10">
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
                                 <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                             </div>
                             <div class="flex-1 min-w-0">
@@ -229,104 +288,134 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Social Media Card -->
                     <div class="bg-white/5 rounded-lg p-6 hover:bg-white/10 transition-all border border-white/10">
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
                                 <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1">
+                                    </path>
                                 </svg>
                             </div>
                             <div class="flex-1 min-w-0">
                                 <h3 class="text-lg font-semibold mb-3">Connect</h3>
                                 <div class="flex flex-col space-y-2">
                                     <a href="#" class="text-accent hover:underline text-sm flex items-center gap-2">
-                                        <svg class="w-4 h-4 icon-instagram" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm5.5-2a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"/></svg>
+                                        <svg class="w-4 h-4 icon-instagram" viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm5.5-2a1.5 1.5 0 110 3 1.5 1.5 0 010-3z" />
+                                        </svg>
                                         Instagram
                                     </a>
                                     <a href="#" class="text-accent hover:underline text-sm flex items-center gap-2">
-                                        <svg class="w-4 h-4 icon-spotify" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.371 0 0 5.371 0 12s5.371 12 12 12 12-5.371 12-12S18.629 0 12 0zm5.2 17.4c-.2.3-.6.4-.9.2-2.6-1.6-5.9-1.9-9.8-1-.4.1-.8-.2-.8-.6 0-.3.2-.6.5-.7 4.2-.9 7.8-.6 10.7 1.2.4.2.5.6.3.9zm1.3-3c-.3.4-.8.5-1.2.3-3-1.8-7.6-2.3-11.1-1.3-.5.1-1-.2-1.1-.7-.1-.5.2-1 .7-1.1 4.1-1 9.2-.5 12.6 1.6.4.2.5.8.1 1.2zm.1-3.1c-3.6-2.1-9.5-2.3-13-.8-.6.2-1.3-.1-1.5-.7-.2-.6.1-1.3.7-1.5 3.9-1.6 10.5-1.3 14.5 1 .6.3.9 1 .6 1.6-.2.5-1 .8-1.5.4z"/></svg>
+                                        <svg class="w-4 h-4 icon-spotify" viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M12 0C5.371 0 0 5.371 0 12s5.371 12 12 12 12-5.371 12-12S18.629 0 12 0zm5.2 17.4c-.2.3-.6.4-.9.2-2.6-1.6-5.9-1.9-9.8-1-.4.1-.8-.2-.8-.6 0-.3.2-.6.5-.7 4.2-.9 7.8-.6 10.7 1.2.4.2.5.6.3.9zm1.3-3c-.3.4-.8.5-1.2.3-3-1.8-7.6-2.3-11.1-1.3-.5.1-1-.2-1.1-.7-.1-.5.2-1 .7-1.1 4.1-1 9.2-.5 12.6 1.6.4.2.5.8.1 1.2zm.1-3.1c-3.6-2.1-9.5-2.3-13-.8-.6.2-1.3-.1-1.5-.7-.2-.6.1-1.3.7-1.5 3.9-1.6 10.5-1.3 14.5 1 .6.3.9 1 .6 1.6-.2.5-1 .8-1.5.4z" />
+                                        </svg>
                                         Spotify
                                     </a>
                                     <a href="#" class="text-accent hover:underline text-sm flex items-center gap-2">
-                                        <svg class="w-4 h-4 icon-soundcloud" viewBox="0 0 24 24" fill="currentColor"><path d="M17.1 9.4c-1.1 0-2 .3-2.8.9-.3-3.4-3.1-6.1-6.6-6.1-1.1 0-2.2.3-3.1.8v10.6H17c2.5 0 4.5-2 4.5-4.5s-2-4.7-4.4-4.7zM3.5 7.7H4v7.1H3.5V7.7zm1.1-.7h.5v7.8h-.5V7zm1.1-.5h.5v8.3h-.5V6.5zm1.1-.4h.5v8.7h-.5V6.1zm1.1-.3h.5v9h-.5V5.8zm1.1-.2h.5v9.2h-.5V5.6zm1.1-.1h.5v9.4h-.5V5.5zm1.1 0h.5v9.4h-.5V5.5z"/></svg>
+                                        <svg class="w-4 h-4 icon-soundcloud" viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M17.1 9.4c-1.1 0-2 .3-2.8.9-.3-3.4-3.1-6.1-6.6-6.1-1.1 0-2.2.3-3.1.8v10.6H17c2.5 0 4.5-2 4.5-4.5s-2-4.7-4.4-4.7zM3.5 7.7H4v7.1H3.5V7.7zm1.1-.7h.5v7.8h-.5V7zm1.1-.5h.5v8.3h-.5V6.5zm1.1-.4h.5v8.7h-.5V6.1zm1.1-.3h.5v9h-.5V5.8zm1.1-.2h.5v9.2h-.5V5.6zm1.1-.1h.5v9.4h-.5V5.5zm1.1 0h.5v9.4h-.5V5.5z" />
+                                        </svg>
                                         SoundCloud
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Note Card -->
                     <div class="bg-white/5 rounded-lg p-6 border border-white/10">
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
                                 <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                    </path>
                                 </svg>
                             </div>
                             <div class="flex-1 min-w-0">
                                 <h3 class="text-lg font-semibold mb-2">Quick Note</h3>
                                 <p class="text-[#b0b0b0] text-sm leading-relaxed">
-                                    For urgent or time-sensitive projects, mention it in your message and I'll prioritize your request.
+                                    For urgent or time-sensitive projects, mention it in your message and I'll
+                                    prioritize your request.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Contact Form -->
                 <div class="lg:col-span-2 fade-in">
                     <div class="bg-white/5 rounded-lg p-8 md:p-10 border border-white/10">
                         <div class="mb-8">
                             <h2 class="text-3xl md:text-4xl font-serif font-bold mb-3 text-center">Send a Message</h2>
-                            <p class="text-[#b0b0b0]">Fill out the form below and I'll get back to you as soon as possible.</p>
+                            <p class="text-[#b0b0b0]">Fill out the form below and I'll get back to you as soon as
+                                possible.</p>
                         </div>
-                        
+
                         <form class="space-y-6">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label for="name" class="block text-sm font-medium mb-2 text-[#d0d0d0]">Name</label>
-                                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg transition-all focus:ring-2 focus:ring-accent/50" placeholder="Your name">
+                                    <input type="text" id="name" name="name" required
+                                        class="w-full px-4 py-3 rounded-lg transition-all focus:ring-2 focus:ring-accent/50"
+                                        placeholder="Your name">
                                 </div>
-                                
+
                                 <div>
-                                    <label for="email" class="block text-sm font-medium mb-2 text-[#d0d0d0]">Email</label>
-                                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg transition-all focus:ring-2 focus:ring-accent/50" placeholder="your@email.com">
+                                    <label for="email"
+                                        class="block text-sm font-medium mb-2 text-[#d0d0d0]">Email</label>
+                                    <input type="email" id="email" name="email" required
+                                        class="w-full px-4 py-3 rounded-lg transition-all focus:ring-2 focus:ring-accent/50"
+                                        placeholder="your@email.com">
                                 </div>
                             </div>
-                            
+
                             <div>
-                                <label for="subject" class="block text-sm font-medium mb-2 text-[#d0d0d0]">Subject</label>
-                                <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 rounded-lg transition-all focus:ring-2 focus:ring-accent/50" placeholder="What's this about?">
+                                <label for="subject"
+                                    class="block text-sm font-medium mb-2 text-[#d0d0d0]">Subject</label>
+                                <input type="text" id="subject" name="subject" required
+                                    class="w-full px-4 py-3 rounded-lg transition-all focus:ring-2 focus:ring-accent/50"
+                                    placeholder="What's this about?">
                             </div>
-                            
+
                             <div>
-                                <label for="message" class="block text-sm font-medium mb-2 text-[#d0d0d0]">Message</label>
-                                <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 rounded-lg transition-all resize-none focus:ring-2 focus:ring-accent/50" placeholder="Tell me about your project, timeline, and any specific requirements..."></textarea>
+                                <label for="message"
+                                    class="block text-sm font-medium mb-2 text-[#d0d0d0]">Message</label>
+                                <textarea id="message" name="message" rows="6" required
+                                    class="w-full px-4 py-3 rounded-lg transition-all resize-none focus:ring-2 focus:ring-accent/50"
+                                    placeholder="Tell me about your project, timeline, and any specific requirements..."></textarea>
                             </div>
-                            
+
                             <div class="pt-4">
-                                <button type="submit" class="block w-auto mx-auto px-8 py-4 bg-accent text-white rounded-lg font-medium hover:bg-accent/90 transition-all hover:scale-[1.02] shadow-lg shadow-accent/20">
+                                <button type="submit"
+                                    class="block w-auto mx-auto px-8 py-4 bg-accent text-white rounded-lg font-medium hover:bg-accent/90 transition-all hover:scale-[1.02] shadow-lg shadow-accent/20">
                                     Send Message
                                 </button>
                             </div>
                         </form>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer class="border-t border-white/10 py-12 px-6 mt-20">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M9 18V5l12-2v13"></path>
                             <circle cx="6" cy="18" r="3"></circle>
                             <circle cx="18" cy="16" r="3"></circle>
@@ -335,43 +424,54 @@
                     </div>
                     <p class="text-sm text-[#b0b0b0]">Music Producer · Sound Designer</p>
                 </div>
-                
+
                 <div>
                     <h4 class="font-semibold mb-4">Navigation</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="index.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Home</a></li>
-                        <li><a href="music.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Music</a></li>
-                        <li><a href="projects.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Projects</a></li>
-                        <li><a href="services.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Services</a></li>
+                        <li><a href="index.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Home</a>
+                        </li>
+                        <li><a href="music.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Music</a>
+                        </li>
+                        <li><a href="projects.html"
+                                class="text-[#b0b0b0] hover:text-accent transition-colors">Projects</a></li>
+                        <li><a href="services.html"
+                                class="text-[#b0b0b0] hover:text-accent transition-colors">Services</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h4 class="font-semibold mb-4">Connect</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="about.html" class="text-[#b0b0b0] hover:text-accent transition-colors">About</a></li>
-                        <li><a href="contact.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Contact</a></li>
-                        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="text-[#b0b0b0] hover:text-accent transition-colors">Instagram</a></li>
-                        <li><a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer" class="text-[#b0b0b0] hover:text-accent transition-colors">Spotify</a></li>
+                        <li><a href="about.html" class="text-[#b0b0b0] hover:text-accent transition-colors">About</a>
+                        </li>
+                        <li><a href="contact.html"
+                                class="text-[#b0b0b0] hover:text-accent transition-colors">Contact</a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+                                class="text-[#b0b0b0] hover:text-accent transition-colors">Instagram</a></li>
+                        <li><a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer"
+                                class="text-[#b0b0b0] hover:text-accent transition-colors">Spotify</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h4 class="font-semibold mb-4">Legal</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="privacy-policy.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Terms of Service</a></li>
+                        <li><a href="privacy-policy.html"
+                                class="text-[#b0b0b0] hover:text-accent transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html"
+                                class="text-[#b0b0b0] hover:text-accent transition-colors">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="border-t border-white/10 pt-8 text-center text-sm text-[#b0b0b0]">
-                <p>&copy; 2025 Alex Rivers. All rights reserved.</p>
+                <p>&copy; 2026 Alex Rivers. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    
+
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

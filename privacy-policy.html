@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy · Alex Rivers</title>
     <meta name="description" content="Privacy Policy for Alex Rivers Music Producer Portfolio.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/custom.css">
-    
+
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -34,110 +37,146 @@
             }
         }
     </script>
-    
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
-        h1, h2, h3, h4, h5, h6 {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Playfair Display', serif;
         }
+
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
+
         .fade-in.animate-in {
             opacity: 1;
             transform: translateY(0);
         }
+
         .navbar {
             transition: all 0.3s ease;
         }
+
         .navbar.scrolled {
             background: rgba(26, 26, 26, 0.95);
             backdrop-filter: blur(10px);
         }
+
         .dropdown:hover .dropdown-menu,
         .dropdown.active .dropdown-menu {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
+
         .dropdown-menu {
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
             transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
         }
+
         html.light .dropdown-menu {
             background: rgba(255, 255, 255, 0.95);
             border-color: rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
+
 <body class="bg-[#1a1a1a] text-[#f5f5f5] transition-colors duration-300">
-    
+
     <!-- Navbar -->
     <nav class="navbar fixed top-0 left-0 right-0 z-50 px-6 py-4">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3 text-2xl font-serif font-bold text-accent">
-                <svg class="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <path d="M9 18V5l12-2v13"></path>
                     <circle cx="6" cy="18" r="3"></circle>
                     <circle cx="18" cy="16" r="3"></circle>
                 </svg>
                 <span>Alex Rivers</span>
             </a>
-            
+
             <!-- Desktop Navigation -->
             <div class="hidden lg:flex items-center space-x-8">
-                <div class="dropdown relative" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
-                    <button class="nav-link text-sm font-medium hover:text-accent transition-colors flex items-center gap-1" aria-expanded="false" aria-haspopup="true" id="home-dropdown">
+                <div class="dropdown relative" onmouseenter="this.classList.add('active')"
+                    onmouseleave="this.classList.remove('active')">
+                    <button
+                        class="nav-link text-sm font-medium hover:text-accent transition-colors flex items-center gap-1"
+                        aria-expanded="false" aria-haspopup="true" id="home-dropdown">
                         Home
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
                         </svg>
                     </button>
-                    <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-[#1a1a1a] border border-white/10 rounded-lg shadow-xl py-2" role="menu" aria-labelledby="home-dropdown">
-                        <a href="index.html" class="block px-4 py-2 text-sm hover:bg-white/10 hover:text-accent transition-colors" role="menuitem">Home</a>
-                        <a href="home2.html" class="block px-4 py-2 text-sm hover:bg-white/10 hover:text-accent transition-colors" role="menuitem">Home 2</a>
+                    <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-[#1a1a1a] border border-white/10 rounded-lg shadow-xl py-2"
+                        role="menu" aria-labelledby="home-dropdown">
+                        <a href="index.html"
+                            class="block px-4 py-2 text-sm hover:bg-white/10 hover:text-accent transition-colors"
+                            role="menuitem">Home</a>
+                        <a href="home2.html"
+                            class="block px-4 py-2 text-sm hover:bg-white/10 hover:text-accent transition-colors"
+                            role="menuitem">Home 2</a>
                     </div>
                 </div>
                 <a href="music.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Music</a>
-                <a href="projects.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Projects</a>
-                <a href="services.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Services</a>
+                <a href="projects.html"
+                    class="nav-link text-sm font-medium hover:text-accent transition-colors">Projects</a>
+                <a href="services.html"
+                    class="nav-link text-sm font-medium hover:text-accent transition-colors">Services</a>
                 <a href="about.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">About</a>
-                <a href="contact.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Contact</a>
-                
+                <a href="contact.html"
+                    class="nav-link text-sm font-medium hover:text-accent transition-colors">Contact</a>
+
                 <button class="theme-toggle p-2 rounded-lg hover:bg-white/10 transition-colors">
                     <span class="theme-icon">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                            </path>
                         </svg>
                     </span>
                 </button>
-                
-                <a href="login.html" class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Login</a>
-                <a href="signup.html" class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Sign Up</a>
+
+                <a href="login.html"
+                    class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Login</a>
+                <a href="signup.html"
+                    class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Sign
+                    Up</a>
             </div>
-            
+
             <!-- Mobile Menu Button -->
             <button class="mobile-menu-btn lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
                 </svg>
             </button>
         </div>
-        
+
         <!-- Mobile Menu -->
         <div class="mobile-menu hidden lg:hidden mt-4 pb-4 border-t border-white/10">
             <div class="flex flex-col space-y-4 pt-4">
                 <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-toggle nav-link text-sm font-medium hover:text-accent transition-colors flex items-center justify-between w-full" aria-expanded="false">
+                    <button
+                        class="mobile-dropdown-toggle nav-link text-sm font-medium hover:text-accent transition-colors flex items-center justify-between w-full"
+                        aria-expanded="false">
                         <span>Home</span>
                         <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
                         </svg>
                     </button>
                     <div class="mobile-dropdown-menu hidden mt-2 pl-4 space-y-2">
@@ -146,27 +185,35 @@
                     </div>
                 </div>
                 <a href="music.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Music</a>
-                <a href="projects.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Projects</a>
-                <a href="services.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Services</a>
+                <a href="projects.html"
+                    class="nav-link text-sm font-medium hover:text-accent transition-colors">Projects</a>
+                <a href="services.html"
+                    class="nav-link text-sm font-medium hover:text-accent transition-colors">Services</a>
                 <a href="about.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">About</a>
-                <a href="contact.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Contact</a>
+                <a href="contact.html"
+                    class="nav-link text-sm font-medium hover:text-accent transition-colors">Contact</a>
                 <div class="flex items-center justify-between pt-2">
                     <button class="theme-toggle p-2 rounded-lg hover:bg-white/10 transition-colors">
                         <span class="theme-icon">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                                </path>
                             </svg>
                         </span>
                     </button>
                     <div class="flex space-x-4">
-                        <a href="login.html" class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Login</a>
-                        <a href="signup.html" class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Sign Up</a>
+                        <a href="login.html"
+                            class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Login</a>
+                        <a href="signup.html"
+                            class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Sign
+                            Up</a>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
-    
+
     <!-- Page Header -->
     <section class="pt-32 pb-12 px-6">
         <div class="max-w-4xl mx-auto text-center fade-in">
@@ -175,28 +222,35 @@
             <p class="text-lg text-[#b0b0b0]">Last updated: January 2025</p>
         </div>
     </section>
-    
+
     <!-- Content -->
     <section class="py-12 px-6 pb-20">
         <div class="max-w-4xl mx-auto">
             <div class="space-y-8 fade-in">
-                
+
                 <div class="bg-white/5 rounded-xl p-8 border border-white/10">
                     <h2 class="text-3xl font-serif font-bold mb-4 text-center">Introduction</h2>
                     <p class="text-[#b0b0b0] leading-relaxed">
-                        This Privacy Policy describes how Alex Rivers ("we," "our," or "us") collects, uses, and protects your personal information when you visit our website and use our services. We are committed to protecting your privacy and ensuring transparency about our data practices.
+                        This Privacy Policy describes how Alex Rivers ("we," "our," or "us") collects, uses, and
+                        protects your personal information when you visit our website and use our services. We are
+                        committed to protecting your privacy and ensuring transparency about our data practices.
                     </p>
                 </div>
-                
+
                 <div class="bg-white/5 rounded-xl p-8 border border-white/10">
                     <h2 class="text-3xl font-serif font-bold mb-4 text-center">Information We Collect</h2>
                     <div class="space-y-4 text-[#b0b0b0] leading-relaxed">
-                        <p><strong class="text-accent">Personal Information:</strong> When you contact us or use our services, we may collect your name, email address, phone number, and any other information you voluntarily provide.</p>
-                        <p><strong class="text-accent">Usage Data:</strong> We automatically collect information about how you interact with our website, including IP address, browser type, pages visited, and time spent on pages.</p>
-                        <p><strong class="text-accent">Cookies:</strong> We use cookies and similar tracking technologies to enhance your browsing experience and analyze website traffic.</p>
+                        <p><strong class="text-accent">Personal Information:</strong> When you contact us or use our
+                            services, we may collect your name, email address, phone number, and any other information
+                            you voluntarily provide.</p>
+                        <p><strong class="text-accent">Usage Data:</strong> We automatically collect information about
+                            how you interact with our website, including IP address, browser type, pages visited, and
+                            time spent on pages.</p>
+                        <p><strong class="text-accent">Cookies:</strong> We use cookies and similar tracking
+                            technologies to enhance your browsing experience and analyze website traffic.</p>
                     </div>
                 </div>
-                
+
                 <div class="bg-white/5 rounded-xl p-8 border border-white/10">
                     <h2 class="text-3xl font-serif font-bold mb-4 text-center">How We Use Your Information</h2>
                     <ul class="space-y-3 text-[#b0b0b0] leading-relaxed list-disc list-inside">
@@ -207,14 +261,17 @@
                         <li>To comply with legal obligations</li>
                     </ul>
                 </div>
-                
+
                 <div class="bg-white/5 rounded-xl p-8 border border-white/10">
                     <h2 class="text-3xl font-serif font-bold mb-4 text-center">Data Protection</h2>
                     <p class="text-[#b0b0b0] leading-relaxed">
-                        We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.
+                        We implement appropriate technical and organizational measures to protect your personal
+                        information against unauthorized access, alteration, disclosure, or destruction. However, no
+                        method of transmission over the internet is 100% secure, and we cannot guarantee absolute
+                        security.
                     </p>
                 </div>
-                
+
                 <div class="bg-white/5 rounded-xl p-8 border border-white/10">
                     <h2 class="text-3xl font-serif font-bold mb-4 text-center">Your Rights</h2>
                     <p class="text-[#b0b0b0] leading-relaxed mb-4">You have the right to:</p>
@@ -226,32 +283,37 @@
                         <li>Withdraw consent at any time</li>
                     </ul>
                 </div>
-                
+
                 <div class="bg-white/5 rounded-xl p-8 border border-white/10">
                     <h2 class="text-3xl font-serif font-bold mb-4 text-center">Third-Party Services</h2>
                     <p class="text-[#b0b0b0] leading-relaxed">
-                        Our website may contain links to third-party websites or services. We are not responsible for the privacy practices of these external sites. We encourage you to review their privacy policies before providing any personal information.
+                        Our website may contain links to third-party websites or services. We are not responsible for
+                        the privacy practices of these external sites. We encourage you to review their privacy policies
+                        before providing any personal information.
                     </p>
                 </div>
-                
+
                 <div class="bg-white/5 rounded-xl p-8 border border-white/10">
                     <h2 class="text-3xl font-serif font-bold mb-4 text-center">Contact Us</h2>
                     <p class="text-[#b0b0b0] leading-relaxed">
-                        If you have any questions about this Privacy Policy or wish to exercise your rights, please contact us at <a href="mailto:hello@alexrivers.com" class="text-accent hover:underline">hello@alexrivers.com</a>.
+                        If you have any questions about this Privacy Policy or wish to exercise your rights, please
+                        contact us at <a href="mailto:hello@alexrivers.com"
+                            class="text-accent hover:underline">hello@alexrivers.com</a>.
                     </p>
                 </div>
-                
+
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer class="border-t border-white/10 py-12 px-6 mt-20">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M9 18V5l12-2v13"></path>
                             <circle cx="6" cy="18" r="3"></circle>
                             <circle cx="18" cy="16" r="3"></circle>
@@ -260,44 +322,54 @@
                     </div>
                     <p class="text-sm text-[#b0b0b0]">Music Producer · Sound Designer</p>
                 </div>
-                
+
                 <div>
                     <h4 class="font-semibold mb-4">Navigation</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="index.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Home</a></li>
-                        <li><a href="music.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Music</a></li>
-                        <li><a href="projects.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Projects</a></li>
-                        <li><a href="services.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Services</a></li>
+                        <li><a href="index.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Home</a>
+                        </li>
+                        <li><a href="music.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Music</a>
+                        </li>
+                        <li><a href="projects.html"
+                                class="text-[#b0b0b0] hover:text-accent transition-colors">Projects</a></li>
+                        <li><a href="services.html"
+                                class="text-[#b0b0b0] hover:text-accent transition-colors">Services</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h4 class="font-semibold mb-4">Connect</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="about.html" class="text-[#b0b0b0] hover:text-accent transition-colors">About</a></li>
-                        <li><a href="contact.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Contact</a></li>
-                        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="text-[#b0b0b0] hover:text-accent transition-colors">Instagram</a></li>
-                        <li><a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer" class="text-[#b0b0b0] hover:text-accent transition-colors">Spotify</a></li>
+                        <li><a href="about.html" class="text-[#b0b0b0] hover:text-accent transition-colors">About</a>
+                        </li>
+                        <li><a href="contact.html"
+                                class="text-[#b0b0b0] hover:text-accent transition-colors">Contact</a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+                                class="text-[#b0b0b0] hover:text-accent transition-colors">Instagram</a></li>
+                        <li><a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer"
+                                class="text-[#b0b0b0] hover:text-accent transition-colors">Spotify</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h4 class="font-semibold mb-4">Legal</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="privacy-policy.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Terms of Service</a></li>
+                        <li><a href="privacy-policy.html"
+                                class="text-[#b0b0b0] hover:text-accent transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html"
+                                class="text-[#b0b0b0] hover:text-accent transition-colors">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="border-t border-white/10 pt-8 text-center text-sm text-[#b0b0b0]">
-                <p>&copy; 2025 Alex Rivers. All rights reserved.</p>
+                <p>&copy; 2026 Alex Rivers. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    
+
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 </body>
-</html>
 
+</html>

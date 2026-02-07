@@ -1,4 +1,4 @@
-/* Custom CSS Overrides - Minimal use only */
+﻿/* Custom CSS Overrides - Minimal use only */
 
 /* Smooth scroll behavior */
 html {
@@ -356,7 +356,7 @@ button, a[class*="px-"], a[class*="py-"] {
 /* ============================================
    BREAKPOINT: 768px (Tablet)
    ============================================ */
-@media (min-width: 426px) and (max-width: 768px) {
+@media (min-width: 426px) and (max-width: 767px) {
   /* Ensure proper stacking */
   .grid {
     grid-template-columns: 1fr !important;
@@ -417,7 +417,7 @@ button, a[class*="px-"], a[class*="py-"] {
 /* ============================================
    BREAKPOINT: 1024px (Small Desktop / Large Tablet)
    ============================================ */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   /* Allow 2 columns on large tablets */
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, 1fr);
@@ -450,7 +450,7 @@ button, a[class*="px-"], a[class*="py-"] {
 /* ============================================
    GENERAL MOBILE FIXES (All mobile sizes)
    ============================================ */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   /* Prevent horizontal scroll */
   * {
     max-width: 100%;
@@ -595,7 +595,7 @@ button, a[class*="px-"], a[class*="py-"] {
 /* ============================================
    TABLET SPECIFIC FIXES (768px - 1024px)
    ============================================ */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   /* Allow 2 columns where appropriate */
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, 1fr);
@@ -760,7 +760,7 @@ form button {
   aspect-ratio: 1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .w-64.h-64,
   .w-80.h-80 {
     max-width: 200px;
@@ -768,7 +768,7 @@ form button {
 }
 
 /* Fix grid columns on mobile */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .grid.grid-cols-1.md\:grid-cols-5 {
     grid-template-columns: 1fr;
   }
@@ -989,7 +989,7 @@ html.light .bg-white\/5.rounded-xl.border.border-white\/10:hover {
 }
 
 /* Fix section headers */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   section.pt-32 {
     padding-top: 4rem;
   }
@@ -1000,7 +1000,7 @@ html.light .bg-white\/5.rounded-xl.border.border-white\/10:hover {
 }
 
 /* Fix text alignment on mobile */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .text-center.md\:text-left {
     text-align: center;
   }
@@ -1012,7 +1012,7 @@ html.light .bg-white\/5.rounded-xl.border.border-white\/10:hover {
 }
 
 /* Fix spacing in about page */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .gap-12 {
     gap: 2rem;
   }
@@ -1027,7 +1027,7 @@ html.light .bg-white\/5.rounded-xl.border.border-white\/10:hover {
 }
 
 /* Fix contact form on mobile */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .grid.grid-cols-1.lg\:grid-cols-3 {
     grid-template-columns: 1fr;
   }
@@ -1042,7 +1042,7 @@ html.light .bg-white\/5.rounded-xl.border.border-white\/10:hover {
 }
 
 /* Fix footer on mobile */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   footer .grid.grid-cols-1.md\:grid-cols-4 {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -1054,14 +1054,14 @@ html.light .bg-white\/5.rounded-xl.border.border-white\/10:hover {
 }
 
 /* Fix services page */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .grid.grid-cols-1.md\:grid-cols-2 {
     grid-template-columns: 1fr;
   }
 }
 
 /* Fix projects page */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .grid.grid-cols-1.md\:grid-cols-2.gap-12 {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -1069,7 +1069,7 @@ html.light .bg-white\/5.rounded-xl.border.border-white\/10:hover {
 }
 
 /* Ensure no element exceeds viewport */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   * {
     box-sizing: border-box;
   }
@@ -1090,11 +1090,12 @@ html.light .bg-white\/5.rounded-xl.border.border-white\/10:hover {
   position: absolute;
   inset: 0;
   /* Placeholder image - replace with your portrait image at assets/img/alex-rivers-portrait.jpg */
-  background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1920&h=1080&fit=crop&auto=format&q=80');
+  /* New portrait image to establish identity */
+  background-image: url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1920&h=1080&fit=crop&auto=format&q=80');
   /* To use your own image, uncomment the line below and comment the line above */
   /* background-image: url('../img/alex-rivers-portrait.jpg'); */
   background-size: cover;
-  background-position: center center;
+  background-position: center 20%;
   background-repeat: no-repeat;
   filter: saturate(1.1) contrast(1.1) brightness(0.85);
   z-index: 0;
@@ -1167,7 +1168,7 @@ html.light section.relative.pt-24.pb-20 a.border-2.border-white\/30:hover {
 }
 
 /* Responsive hero section */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   section.relative.pt-24.pb-20 {
     min-height: 70vh;
     padding-top: 6rem;
@@ -1193,3 +1194,4 @@ html.light section.relative.pt-24.pb-20 a.border-2.border-white\/30:hover {
 .icon-instagram { color: #E1306C; }
 .icon-spotify { color: #1DB954; }
 .icon-soundcloud { color: #FF7700; }
+

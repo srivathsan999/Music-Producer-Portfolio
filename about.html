@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About · Alex Rivers</title>
-    <meta name="description" content="Learn about Alex Rivers, a professional music producer specializing in electronic, hip-hop, and cinematic music.">
+    <meta name="description"
+        content="Learn about Alex Rivers, a professional music producer specializing in electronic, hip-hop, and cinematic music.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/custom.css">
-    
+
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -34,110 +38,146 @@
             }
         }
     </script>
-    
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
-        h1, h2, h3, h4, h5, h6 {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Playfair Display', serif;
         }
+
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
+
         .fade-in.animate-in {
             opacity: 1;
             transform: translateY(0);
         }
+
         .navbar {
             transition: all 0.3s ease;
         }
+
         .navbar.scrolled {
             background: rgba(26, 26, 26, 0.95);
             backdrop-filter: blur(10px);
         }
+
         .dropdown:hover .dropdown-menu,
         .dropdown.active .dropdown-menu {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
+
         .dropdown-menu {
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
             transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
         }
+
         html.light .dropdown-menu {
             background: rgba(255, 255, 255, 0.95);
             border-color: rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
+
 <body class="bg-[#1a1a1a] text-[#f5f5f5] transition-colors duration-300">
-    
+
     <!-- Navbar -->
     <nav class="navbar fixed top-0 left-0 right-0 z-50 px-6 py-4">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3 text-2xl font-serif font-bold text-accent">
-                <svg class="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <path d="M9 18V5l12-2v13"></path>
                     <circle cx="6" cy="18" r="3"></circle>
                     <circle cx="18" cy="16" r="3"></circle>
                 </svg>
                 <span>Alex Rivers</span>
             </a>
-            
+
             <!-- Desktop Navigation -->
             <div class="hidden lg:flex items-center space-x-8">
-                <div class="dropdown relative" onmouseenter="this.classList.add('active')" onmouseleave="this.classList.remove('active')">
-                    <button class="nav-link text-sm font-medium hover:text-accent transition-colors flex items-center gap-1" aria-expanded="false" aria-haspopup="true" id="home-dropdown">
+                <div class="dropdown relative" onmouseenter="this.classList.add('active')"
+                    onmouseleave="this.classList.remove('active')">
+                    <button
+                        class="nav-link text-sm font-medium hover:text-accent transition-colors flex items-center gap-1"
+                        aria-expanded="false" aria-haspopup="true" id="home-dropdown">
                         Home
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
                         </svg>
                     </button>
-                    <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-[#1a1a1a] border border-white/10 rounded-lg shadow-xl py-2" role="menu" aria-labelledby="home-dropdown">
-                        <a href="index.html" class="block px-4 py-2 text-sm hover:bg-white/10 hover:text-accent transition-colors" role="menuitem">Home</a>
-                        <a href="home2.html" class="block px-4 py-2 text-sm hover:bg-white/10 hover:text-accent transition-colors" role="menuitem">Home 2</a>
+                    <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-[#1a1a1a] border border-white/10 rounded-lg shadow-xl py-2"
+                        role="menu" aria-labelledby="home-dropdown">
+                        <a href="index.html"
+                            class="block px-4 py-2 text-sm hover:bg-white/10 hover:text-accent transition-colors"
+                            role="menuitem">Home</a>
+                        <a href="home2.html"
+                            class="block px-4 py-2 text-sm hover:bg-white/10 hover:text-accent transition-colors"
+                            role="menuitem">Home 2</a>
                     </div>
                 </div>
                 <a href="music.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Music</a>
-                <a href="projects.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Projects</a>
-                <a href="services.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Services</a>
+                <a href="projects.html"
+                    class="nav-link text-sm font-medium hover:text-accent transition-colors">Projects</a>
+                <a href="services.html"
+                    class="nav-link text-sm font-medium hover:text-accent transition-colors">Services</a>
                 <a href="about.html" class="nav-link text-sm font-medium text-accent transition-colors">About</a>
-                <a href="contact.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Contact</a>
-                
+                <a href="contact.html"
+                    class="nav-link text-sm font-medium hover:text-accent transition-colors">Contact</a>
+
                 <button class="theme-toggle p-2 rounded-lg hover:bg-white/10 transition-colors">
                     <span class="theme-icon">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                            </path>
                         </svg>
                     </span>
                 </button>
-                
-                <a href="login.html" class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Login</a>
-                <a href="signup.html" class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Sign Up</a>
+
+                <a href="login.html"
+                    class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Login</a>
+                <a href="signup.html"
+                    class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Sign
+                    Up</a>
             </div>
-            
+
             <!-- Mobile Menu Button -->
             <button class="mobile-menu-btn lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
                 </svg>
             </button>
         </div>
-        
+
         <!-- Mobile Menu -->
         <div class="mobile-menu hidden lg:hidden mt-4 pb-4 border-t border-white/10">
             <div class="flex flex-col space-y-4 pt-4">
                 <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-toggle nav-link text-sm font-medium hover:text-accent transition-colors flex items-center justify-between w-full" aria-expanded="false">
+                    <button
+                        class="mobile-dropdown-toggle nav-link text-sm font-medium hover:text-accent transition-colors flex items-center justify-between w-full"
+                        aria-expanded="false">
                         <span>Home</span>
                         <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
                         </svg>
                     </button>
                     <div class="mobile-dropdown-menu hidden mt-2 pl-4 space-y-2">
@@ -146,27 +186,35 @@
                     </div>
                 </div>
                 <a href="music.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Music</a>
-                <a href="projects.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Projects</a>
-                <a href="services.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Services</a>
+                <a href="projects.html"
+                    class="nav-link text-sm font-medium hover:text-accent transition-colors">Projects</a>
+                <a href="services.html"
+                    class="nav-link text-sm font-medium hover:text-accent transition-colors">Services</a>
                 <a href="about.html" class="nav-link text-sm font-medium text-accent transition-colors">About</a>
-                <a href="contact.html" class="nav-link text-sm font-medium hover:text-accent transition-colors">Contact</a>
+                <a href="contact.html"
+                    class="nav-link text-sm font-medium hover:text-accent transition-colors">Contact</a>
                 <div class="flex items-center justify-between pt-2">
                     <button class="theme-toggle p-2 rounded-lg hover:bg-white/10 transition-colors">
                         <span class="theme-icon">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                                </path>
                             </svg>
                         </span>
                     </button>
                     <div class="flex space-x-4">
-                        <a href="login.html" class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Login</a>
-                        <a href="signup.html" class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Sign Up</a>
+                        <a href="login.html"
+                            class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Login</a>
+                        <a href="signup.html"
+                            class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">Sign
+                            Up</a>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
-    
+
     <!-- Page Header -->
     <section class="pt-32 pb-20 px-6">
         <div class="max-w-6xl mx-auto text-center fade-in">
@@ -176,35 +224,39 @@
             </p>
         </div>
     </section>
-    
+
     <!-- Profile Section -->
     <section class="py-12 px-6">
         <div class="max-w-6xl mx-auto">
             <div class="flex flex-col md:flex-row items-center gap-12 mb-16 fade-in">
                 <!-- Profile Image -->
                 <div class="flex-shrink-0">
-                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-accent/20 p-1 overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces" alt="Alex Rivers - Music Producer" class="w-full h-full object-cover rounded-full" onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br', 'from-accent/20', 'to-accent/5');">
+                    <div
+                        class="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-accent/20 p-1 overflow-hidden bg-gradient-to-br from-accent/20 to-accent/5">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces"
+                            alt="Alex Rivers - Music Producer" class="w-full h-full object-cover rounded-full"
+                            onerror="this.style.display='none'; this.parentElement.classList.add('bg-gradient-to-br', 'from-accent/20', 'to-accent/5');">
                     </div>
                 </div>
-                
+
                 <!-- Quick Intro -->
                 <div class="flex-1 text-center md:text-left">
                     <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Alex Rivers</h2>
                     <p class="text-xl text-accent mb-4">Music Producer · Sound Designer</p>
                     <p class="text-lg text-[#b0b0b0] leading-relaxed max-w-2xl mx-auto md:mx-0">
-                        Crafting soundscapes that move the soul. Specializing in electronic, hip-hop, and cinematic compositions with over a decade of experience.
+                        Crafting soundscapes that move the soul. Specializing in electronic, hip-hop, and cinematic
+                        compositions with over a decade of experience.
                     </p>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Biography Section -->
     <section class="py-12 px-6">
         <div class="max-w-6xl mx-auto">
             <div class="space-y-12">
-                
+
                 <!-- Story 1 -->
                 <div class="fade-in">
                     <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
@@ -214,26 +266,37 @@
                                 <span class="text-sm text-accent font-medium">The Beginning</span>
                             </div>
                             <p class="text-lg text-[#b0b0b0] leading-relaxed">
-                                My journey into music production began over a decade ago, when I first discovered the power of synthesizers and the endless possibilities of digital audio workstations. What started as a hobby quickly evolved into a passion for crafting soundscapes that could evoke emotion, tell stories, and move people.
+                                My journey into music production began over a decade ago, when I first discovered the
+                                power of synthesizers and the endless possibilities of digital audio workstations. What
+                                started as a hobby quickly evolved into a passion for crafting soundscapes that could
+                                evoke emotion, tell stories, and move people.
                             </p>
                         </div>
                         <div class="md:col-span-2">
-                            <div class="bg-white/5 rounded-lg p-6 border border-white/10 h-full flex items-center justify-center">
-                                <svg class="w-24 h-24 text-accent/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
+                            <div
+                                class="bg-white/5 rounded-lg p-6 border border-white/10 h-full flex items-center justify-center">
+                                <svg class="w-24 h-24 text-accent/30" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3">
+                                    </path>
                                 </svg>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Story 2 -->
                 <div class="fade-in">
                     <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
                         <div class="md:col-span-2 order-2 md:order-1">
-                            <div class="bg-white/5 rounded-lg p-6 border border-white/10 h-full flex items-center justify-center">
-                                <svg class="w-24 h-24 text-accent/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            <div
+                                class="bg-white/5 rounded-lg p-6 border border-white/10 h-full flex items-center justify-center">
+                                <svg class="w-24 h-24 text-accent/30" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                                    </path>
                                 </svg>
                             </div>
                         </div>
@@ -243,12 +306,15 @@
                                 <span class="text-sm text-accent font-medium">My Approach</span>
                             </div>
                             <p class="text-lg text-[#b0b0b0] leading-relaxed">
-                                I specialize in electronic music, hip-hop production, and cinematic scoring—genres that allow for creative experimentation while maintaining a strong connection to rhythm and melody. My approach combines technical precision with artistic intuition, ensuring that every track I produce or mix has both sonic clarity and emotional depth.
+                                I specialize in electronic music, hip-hop production, and cinematic scoring—genres that
+                                allow for creative experimentation while maintaining a strong connection to rhythm and
+                                melody. My approach combines technical precision with artistic intuition, ensuring that
+                                every track I produce or mix has both sonic clarity and emotional depth.
                             </p>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Story 3 -->
                 <div class="fade-in">
                     <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
@@ -258,26 +324,37 @@
                                 <span class="text-sm text-accent font-medium">Collaborations</span>
                             </div>
                             <p class="text-lg text-[#b0b0b0] leading-relaxed">
-                                Over the years, I've had the privilege of working with artists across various genres, from emerging talents to established names. Each collaboration teaches me something new and pushes me to evolve my craft. Whether I'm producing a full album, mixing a single, or creating a film score, my goal remains the same: to serve the music and help bring the artist's vision to life.
+                                Over the years, I've had the privilege of working with artists across various genres,
+                                from emerging talents to established names. Each collaboration teaches me something new
+                                and pushes me to evolve my craft. Whether I'm producing a full album, mixing a single,
+                                or creating a film score, my goal remains the same: to serve the music and help bring
+                                the artist's vision to life.
                             </p>
                         </div>
                         <div class="md:col-span-2">
-                            <div class="bg-white/5 rounded-lg p-6 border border-white/10 h-full flex items-center justify-center">
-                                <svg class="w-24 h-24 text-accent/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            <div
+                                class="bg-white/5 rounded-lg p-6 border border-white/10 h-full flex items-center justify-center">
+                                <svg class="w-24 h-24 text-accent/30" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                                    </path>
                                 </svg>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Story 4 -->
                 <div class="fade-in">
                     <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
                         <div class="md:col-span-2 order-2 md:order-1">
-                            <div class="bg-white/5 rounded-lg p-6 border border-white/10 h-full flex items-center justify-center">
-                                <svg class="w-24 h-24 text-accent/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            <div
+                                class="bg-white/5 rounded-lg p-6 border border-white/10 h-full flex items-center justify-center">
+                                <svg class="w-24 h-24 text-accent/30" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                                 </svg>
                             </div>
                         </div>
@@ -287,7 +364,11 @@
                                 <span class="text-sm text-accent font-medium">The Philosophy</span>
                             </div>
                             <p class="text-lg text-[#b0b0b0] leading-relaxed">
-                                When I'm not in the studio, I'm constantly exploring new sounds, techniques, and technologies. The music production landscape is always evolving, and staying current with both classic and cutting-edge approaches is essential to my work. I believe that great music comes from a balance of technical skill, creative vision, and genuine passion for the craft.
+                                When I'm not in the studio, I'm constantly exploring new sounds, techniques, and
+                                technologies. The music production landscape is always evolving, and staying current
+                                with both classic and cutting-edge approaches is essential to my work. I believe that
+                                great music comes from a balance of technical skill, creative vision, and genuine
+                                passion for the craft.
                             </p>
                         </div>
                     </div>
@@ -295,7 +376,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Skills Section -->
     <section class="py-16 px-6 bg-white/5">
         <div class="max-w-6xl mx-auto">
@@ -305,14 +386,16 @@
                     Technical proficiency meets creative vision
                 </p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Technical Skills Card -->
                 <div class="fade-in bg-white/5 rounded-lg p-8 border border-white/10 hover:bg-white/10 transition-all">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center">
                             <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                                </path>
                             </svg>
                         </div>
                         <h3 class="text-2xl font-serif font-bold">Technical Skills</h3>
@@ -340,13 +423,15 @@
                         </li>
                     </ul>
                 </div>
-                
+
                 <!-- Genres Card -->
                 <div class="fade-in bg-white/5 rounded-lg p-8 border border-white/10 hover:bg-white/10 transition-all">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center">
                             <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3">
+                                </path>
                             </svg>
                         </div>
                         <h3 class="text-2xl font-serif font-bold">Genres & Styles</h3>
@@ -377,14 +462,15 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer class="border-t border-white/10 py-12 px-6 mt-20">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M9 18V5l12-2v13"></path>
                             <circle cx="6" cy="18" r="3"></circle>
                             <circle cx="18" cy="16" r="3"></circle>
@@ -393,43 +479,54 @@
                     </div>
                     <p class="text-sm text-[#b0b0b0]">Music Producer · Sound Designer</p>
                 </div>
-                
+
                 <div>
                     <h4 class="font-semibold mb-4">Navigation</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="index.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Home</a></li>
-                        <li><a href="music.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Music</a></li>
-                        <li><a href="projects.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Projects</a></li>
-                        <li><a href="services.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Services</a></li>
+                        <li><a href="index.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Home</a>
+                        </li>
+                        <li><a href="music.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Music</a>
+                        </li>
+                        <li><a href="projects.html"
+                                class="text-[#b0b0b0] hover:text-accent transition-colors">Projects</a></li>
+                        <li><a href="services.html"
+                                class="text-[#b0b0b0] hover:text-accent transition-colors">Services</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h4 class="font-semibold mb-4">Connect</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="about.html" class="text-[#b0b0b0] hover:text-accent transition-colors">About</a></li>
-                        <li><a href="contact.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Contact</a></li>
-                        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="text-[#b0b0b0] hover:text-accent transition-colors">Instagram</a></li>
-                        <li><a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer" class="text-[#b0b0b0] hover:text-accent transition-colors">Spotify</a></li>
+                        <li><a href="about.html" class="text-[#b0b0b0] hover:text-accent transition-colors">About</a>
+                        </li>
+                        <li><a href="contact.html"
+                                class="text-[#b0b0b0] hover:text-accent transition-colors">Contact</a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+                                class="text-[#b0b0b0] hover:text-accent transition-colors">Instagram</a></li>
+                        <li><a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer"
+                                class="text-[#b0b0b0] hover:text-accent transition-colors">Spotify</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h4 class="font-semibold mb-4">Legal</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="privacy-policy.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html" class="text-[#b0b0b0] hover:text-accent transition-colors">Terms of Service</a></li>
+                        <li><a href="privacy-policy.html"
+                                class="text-[#b0b0b0] hover:text-accent transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html"
+                                class="text-[#b0b0b0] hover:text-accent transition-colors">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="border-t border-white/10 pt-8 text-center text-sm text-[#b0b0b0]">
-                <p>&copy; 2025 Alex Rivers. All rights reserved.</p>
+                <p>&copy; 2026 Alex Rivers. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    
+
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>
